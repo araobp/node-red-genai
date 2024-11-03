@@ -18,6 +18,13 @@ This project uses my original API server: https://github.com/araobp/compact-rag
 
 ...
 
+### Installing the package
+
+It is useful to define a bash alias for installing the package in Node-RED.
+```
+alias rl='cd ~/.node-red;npm install ~/node-red-ai-agents/cx'
+```
+
 ## References
 
 - https://nodered.org/docs/creating-nodes/
