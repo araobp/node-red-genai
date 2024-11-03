@@ -2,7 +2,7 @@
 
 (Work in progress, this is my hobby project)
 
-<img src="./docs/first_test.jpeg" width=700>
+<img src="./docs/first_test.jpg" width=800>
 
 ## Background and Motivation
 
