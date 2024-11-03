@@ -13,7 +13,7 @@ I am an engineer for my company's showroom. I need an AI agent framework that al
 Everything in this project runs on Raspberry Pi:
 
 - Raspberry Pi
-- [Compact RAG](https://github.com/araobp/compact-rag)
+- [Compact RAG](https://github.com/araobp/compact-rag) and OpenAI API Key
 
 ## Set up
 
@@ -29,8 +29,14 @@ https://nodered.org/docs/getting-started/raspberrypi
 
 It is useful to define a bash alias for installing the package in Node-RED.
 ```
-alias rl='cd ~/.node-red;npm install ~/node-red-ai-agents/cx'
+alias rl='cd ~/.node-red;npm install ~/node-red-ai-agents/cx;node-red-stop;node-red-start'
 ```
+
+## Original nodes for Node-RED 
+
+This project develops nodes to interwork with the Compact RAG for AI Agents.
+
+=> [cx package](./cx) (Work in progress)
 
 ## References
 
