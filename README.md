@@ -1,4 +1,4 @@
-# node-red-ai-agents
+# Node-RED as an AI agent framwork
 
 (Work in progress, this is my hobby project)
 
