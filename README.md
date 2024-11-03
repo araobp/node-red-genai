@@ -18,4 +18,7 @@ This project uses my original API server: https://github.com/araobp/compact-rag
 
 ...
 
+## References
+
+- https://nodered.org/docs/creating-nodes/
  
