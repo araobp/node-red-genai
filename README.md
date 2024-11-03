@@ -6,4 +6,12 @@
 
  ## Set up
 
- This project uses my original API server: https://github.com/araobp/compact-rag
+### API Server
+
+This project uses my original API server: https://github.com/araobp/compact-rag
+
+### Node-RED
+
+...
+
+ 
