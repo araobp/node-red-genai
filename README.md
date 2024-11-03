@@ -2,6 +2,8 @@
 
 (Work in progress, this is my hobby project)
 
+<img src="./docs/first_test.jpeg" width=600>
+
 ## Background and Motivation
 
 I am an engineer for my company's showroom. I need an AI agent framework that also supports IoT.
