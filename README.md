@@ -10,6 +10,13 @@ I am an engineer for my company's showroom. I need an AI agent framework that al
 
 Test if Node-RED can be used as an AI agent framework
 
+## Requirements
+
+Everything in this project runs on Raspberry Pi.
+
+- Raspberry Pi
+- [Compact RAG](https://github.com/araobp/compact-rag)
+
 ## Set up
 
 ### API Server
@@ -18,7 +25,7 @@ This project uses my original API server: https://github.com/araobp/compact-rag
 
 ### Node-RED
 
-...
+https://nodered.org/docs/getting-started/raspberrypi
 
 ### Installing the package
 
