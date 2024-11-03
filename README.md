@@ -8,11 +8,9 @@
 
 I am an engineer for my company's showroom. I need an AI agent framework that also supports IoT.
 
-Test if Node-RED can be used as an AI agent framework
-
 ## Requirements
 
-Everything in this project runs on Raspberry Pi.
+Everything in this project runs on Raspberry Pi:
 
 - Raspberry Pi
 - [Compact RAG](https://github.com/araobp/compact-rag)
