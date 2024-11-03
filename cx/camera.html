@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('hello-world',{
+    RED.nodes.registerType('camera',{
         category: 'function',
         color: '#a6bbcf',
         defaults: {
@@ -7,20 +7,20 @@
         },
         inputs: 1,
         outputs: 1,
-        icon: "font-awesome/fa-paper-plane",
+        icon: "font-awesome/fa-camera",
         label: function() {
-            return this.name||"hello-world";
+            return this.name||"camera";
         }
     });
 </script>
 
-<script type="text/html" data-template-name="hello-world">
+<script type="text/html" data-template-name="camera">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/html" data-help-name="hello-world">
-    <p>Hello World.</p>
+<script type="text/html" data-help-name="camera">
+	<p>Capture image from USB camera</p>
 </script>

@@ -11,7 +11,8 @@
   "node-red" : {
     "nodes": {
       "hello-world": "hello-world.js",
-      "chat": "chat.js"
+      "chat": "chat.js",
+      "camera": "camera.js"
     }
   }
 }
