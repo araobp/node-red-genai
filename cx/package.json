@@ -10,7 +10,8 @@
   "license": "ISC",
   "node-red" : {
     "nodes": {
-      "hello-world": "hello-world.js"
+      "hello-world": "hello-world.js",
+      "chat": "chat.js"
     }
   }
 }
