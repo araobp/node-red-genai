@@ -21,22 +21,22 @@ Everything in this project runs on Raspberry Pi:
 
 This project uses my original API server: https://github.com/araobp/compact-rag
 
-### Node-RED
+### Running Node-RED on Raspberry Pi
 
 https://nodered.org/docs/getting-started/raspberrypi
 
+## Original Node-RED package "cx"
+
+This project develops original Node-RED nodes to interwork with the Compact RAG for AI Agents.
+
+=> [cx package](./cx) (Work in progress)
+
 ### Installing the package
 
-It is useful to define a bash alias for installing the package in Node-RED.
+It is useful to define a bash alias for installing the package in Node-RED, like this:
 ```
 alias rl='cd ~/.node-red;npm install ~/node-red-ai-agents/cx;node-red-stop;node-red-start'
 ```
-
-## Original nodes for Node-RED 
-
-This project develops nodes to interwork with the Compact RAG for AI Agents.
-
-=> [cx package](./cx) (Work in progress)
 
 ## References
 
