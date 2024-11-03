@@ -1,10 +1,14 @@
 # node-red-ai-agents
 
-(Work in progress)
+(Work in progress, this is my hobby project)
 
- Test if Node-RED can be used as an AI agent framework
+## Background and Motivation
 
- ## Set up
+I am an engineer for my company's showroom. I need an AI agent framework that also supports IoT.
+
+Test if Node-RED can be used as an AI agent framework
+
+## Set up
 
 ### API Server
 
