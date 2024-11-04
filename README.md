@@ -38,6 +38,16 @@ It is useful to define a bash alias for installing the package in Node-RED, like
 alias rl='cd ~/.node-red;npm install ~/node-red-ai-agents/cx;node-red-stop;node-red-start'
 ```
 
+## Samples
+
+### Testing IoT flows
+
+<img src="./docs/iot_test.jpg" width=700>
+
+### Testing query with RAG
+
+<img src="./docs/rag_test.jpg" width=700>
+
 ## References
 
 - https://nodered.org/docs/creating-nodes/
