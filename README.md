@@ -14,6 +14,7 @@ Everything in this project runs on Raspberry Pi:
 
 - Raspberry Pi
 - [Compact RAG](https://github.com/araobp/compact-rag) and OpenAI API Key
+- Mosquitto Broker (MQTT Broker)
 
 ## Set up
 
@@ -24,6 +25,10 @@ This project uses my original API server: https://github.com/araobp/compact-rag
 ### Running Node-RED on Raspberry Pi
 
 https://nodered.org/docs/getting-started/raspberrypi
+
+### MQTT Broker setup
+
+https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/
 
 ## Original Node-RED package "cx"
 
