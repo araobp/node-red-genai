@@ -1,6 +1,6 @@
 # Node-RED as an AI agent framwork
 
-(Work in progress, this is my hobby project)
+Note: this is my hobby project.
 
 <img src="./docs/iot_test.jpg" width=600>
 
@@ -34,7 +34,7 @@ https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/
 
 This project develops original Node-RED nodes to interwork with the Compact RAG for AI Agents.
 
-=> [cx package](./cx) (Work in progress)
+=> [cx package](./cx)
 
 ### Installing the package
 
