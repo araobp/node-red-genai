@@ -7,14 +7,16 @@ const hello = async () => {
 }
 
 module.exports = function(RED) {
-    function HelloWorldNode(config) {
+    function HelloNode(config) {
         RED.nodes.createNode(this,config);
         var node = this;
         node.on('input', async msg => {
+            this.status({fill: "green", shape: "dot", text: "in progress..."});
             const message = await hello();
+            this.status({})
             msg.payload = message;
             node.send(msg);
         });
     }
-    RED.nodes.registerType("hello-world",HelloWorldNode);
+    RED.nodes.registerType("hello", HelloNode);
 }

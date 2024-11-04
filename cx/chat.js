@@ -16,7 +16,6 @@ const chat = async (context, query, k=3, b64image=null) => {
         );
     }
     const data = await response.json();
-    //console.log(data);
     return data.answer;
 }
 
@@ -32,8 +31,9 @@ module.exports = function(RED) {
             if ('b64image' in msg.payload) {
                 b64image = msg.payload.b64image;
             }
-            //console.log(query);
+            this.status({fill: "green", shape: "dot", text: "in progress..."});
             const answer = await chat(context, query, k, b64image);
+            this.status({});
             msg.payload = answer;
             node.send(msg);
         });
