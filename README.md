@@ -45,7 +45,7 @@ alias rl='cd ~/.node-red;npm install ~/node-red-ai-agents/cx;node-red-stop;node-
 
 ## Samples
 
-Sample Node-RED flows => [./flows]
+Sample Node-RED flows => [flows](./flows)
 
 ### Testing IoT flows
 
