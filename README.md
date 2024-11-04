@@ -13,7 +13,7 @@ I am an engineer for my company's showroom. I need an AI agent framework that al
 Everything in this project runs on Raspberry Pi:
 
 - Raspberry Pi
-- [Compact RAG](https://github.com/araobp/compact-rag) and OpenAI API Key
+- [Compact RAG (API Server)](https://github.com/araobp/compact-rag) and OpenAI API Key
 - Mosquitto Broker (MQTT Broker)
 
 ## Set up
