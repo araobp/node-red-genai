@@ -1,0 +1,521 @@
+[
+    {
+        "id": "b33d1edd4bcd9bcb",
+        "type": "tab",
+        "label": "Chat Completion w/ RAG",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "71e30f95bddf0a25",
+        "type": "debug",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "2c2262cfb11f76fa",
+        "type": "chat",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "Chat Completion w/ RAG",
+        "x": 350,
+        "y": 120,
+        "wires": [
+            [
+                "71e30f95bddf0a25",
+                "da29636a07ddaace"
+            ]
+        ]
+    },
+    {
+        "id": "8a937b0708dc03f6",
+        "type": "inject",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "Test Hello API",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "58588d017c6c98d8"
+            ]
+        ]
+    },
+    {
+        "id": "d4d713d7a1347e88",
+        "type": "image",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "",
+        "width": "200",
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": true,
+        "outputs": 1,
+        "x": 580,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7c485c7738376914",
+        "type": "inject",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "Take",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "ea67554343a5f29d"
+            ]
+        ]
+    },
+    {
+        "id": "ea67554343a5f29d",
+        "type": "camera",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "USB Camera",
+        "x": 350,
+        "y": 280,
+        "wires": [
+            [
+                "d4d713d7a1347e88",
+                "43cb1f49164bbc1a"
+            ]
+        ]
+    },
+    {
+        "id": "43cb1f49164bbc1a",
+        "type": "change",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "Prompt",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.b64image",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.query",
+                "pt": "msg",
+                "to": "Describe the image.",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 120,
+        "y": 460,
+        "wires": [
+            [
+                "65ab6e3cfd3c318b"
+            ]
+        ]
+    },
+    {
+        "id": "58588d017c6c98d8",
+        "type": "hello",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "",
+        "x": 290,
+        "y": 60,
+        "wires": [
+            [
+                "71e30f95bddf0a25"
+            ]
+        ]
+    },
+    {
+        "id": "65ab6e3cfd3c318b",
+        "type": "chat",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "Chat Completion w/ image",
+        "x": 360,
+        "y": 460,
+        "wires": [
+            [
+                "d2ab3870662cb0c6",
+                "931dd50810fc5b82"
+            ]
+        ]
+    },
+    {
+        "id": "8d8eb34c2106dadd",
+        "type": "chat",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "Chat Completion",
+        "x": 630,
+        "y": 540,
+        "wires": [
+            [
+                "00d96deed0af53ab",
+                "931dd50810fc5b82"
+            ]
+        ]
+    },
+    {
+        "id": "d2ab3870662cb0c6",
+        "type": "template",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "Prompt",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Extract key phrases from the text below.\nOutput the result in the JSON format below.\nOutput the result only.\nDo not output extra explanations.\n\n## Text\n\n{{payload}}\n\n## JSON Format\n\n{\"keyphrases\": [\"keyphrase1\", \"keyphrase2\", ...]}",
+        "output": "str",
+        "x": 120,
+        "y": 540,
+        "wires": [
+            [
+                "3313bd1e61dc28ff"
+            ]
+        ]
+    },
+    {
+        "id": "3313bd1e61dc28ff",
+        "type": "change",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "Prompt",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.query",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.json_output",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 540,
+        "wires": [
+            [
+                "8d8eb34c2106dadd"
+            ]
+        ]
+    },
+    {
+        "id": "931dd50810fc5b82",
+        "type": "debug",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "31dbb390b1b9f02d",
+        "type": "ui-form",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "Chat Query",
+        "group": "59173da22cff8eec",
+        "label": "Chat Query",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "context",
+                "key": "context",
+                "type": "dropdown",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "query",
+                "key": "query",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "context": "",
+            "query": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [
+            {
+                "dropdown": "context",
+                "value": "yokohama",
+                "label": "yokohama"
+            },
+            {
+                "dropdown": "context",
+                "value": "hansaplatz",
+                "label": "hansaplatz"
+            }
+        ],
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "2c2262cfb11f76fa"
+            ]
+        ]
+    },
+    {
+        "id": "da29636a07ddaace",
+        "type": "ui-markdown",
+        "z": "b33d1edd4bcd9bcb",
+        "group": "2b2b8fa60df601aa",
+        "name": "Result",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "content": "## Result\n\n{{ msg?.payload }}",
+        "className": "",
+        "x": 790,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5ccb955079c313b9",
+        "type": "mqtt in",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "",
+        "topic": "genai/image_recognition/in",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1f88697f4590333d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "ea67554343a5f29d"
+            ]
+        ]
+    },
+    {
+        "id": "00d96deed0af53ab",
+        "type": "mqtt out",
+        "z": "b33d1edd4bcd9bcb",
+        "name": "",
+        "topic": "genai/image_recognition/out",
+        "qos": "2",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "1f88697f4590333d",
+        "x": 740,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "59173da22cff8eec",
+        "type": "ui-group",
+        "name": "Chat Completion",
+        "page": "35f68326bbf8882e",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "2b2b8fa60df601aa",
+        "type": "ui-group",
+        "name": "Result",
+        "page": "35f68326bbf8882e",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "1f88697f4590333d",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.0.196",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "35f68326bbf8882e",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "07b23dfd979a88c0",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "01b571d17c098787",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "07b23dfd979a88c0",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "showPageTitle": true,
+        "navigationStyle": "default",
+        "titleBarStyle": "default"
+    },
+    {
+        "id": "01b571d17c098787",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    }
+]
