@@ -1,8 +1,8 @@
 const BASE_URL = "http://127.0.0.1:5050";
 
-const chat = async (context, query, k=3, b64image=null) => {
+const chat = async (context, query, k=3, json_output=false, b64image=null) => {
     const userMessage = encodeURIComponent(query);
-    const url = `${BASE_URL}/chat?context=${context}&user_message=${userMessage}&k=${k}`;
+    const url = `${BASE_URL}/chat?context=${context}&user_message=${userMessage}&k=${k}&json_output=${json_output}`;
     var response;
     if (b64image === null) {
         response = await fetch(url);
@@ -27,12 +27,10 @@ module.exports = function(RED) {
             const context = msg.payload.context;
             const query = msg.payload.query;
             const k = msg.payload.k;
-            var b64image = null;
-            if ('b64image' in msg.payload) {
-                b64image = msg.payload.b64image;
-            }
+            const json_output = msg.payload.json_output ?? false;
+            const b64image = msg.payload.b64image ?? null;
             this.status({fill: "green", shape: "dot", text: "in progress..."});
-            const answer = await chat(context, query, k, b64image);
+            const answer = await chat(context, query, k, json_output, b64image);
             this.status({});
             msg.payload = answer;
             node.send(msg);
