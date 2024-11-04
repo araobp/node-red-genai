@@ -18,7 +18,7 @@ Everything in this project runs on Raspberry Pi:
 
 ## Set up
 
-### API Server
+### Compact RAG (API Server)
 
 This project uses my original API server: https://github.com/araobp/compact-rag
 
