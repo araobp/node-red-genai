@@ -42,20 +42,20 @@ alias rl='cd ~/.node-red;npm install ~/node-red-ai-agents/cx;node-red-stop;node-
 
 ### Testing IoT flows
 
-MQTT publisher
+<img src="./docs/iot_test.jpg" width=700>
+
+MQTT publisher (This script simulates a proximity sensor emitting an proximity event to the MQTT broker)
 
 ```
 abc@raspberrypi:~/node-red-ai-agents/bin $ ./image_recognition_start.sh
 ```
 
-MQTT subscriber
+MQTT subscriber (This script simulates a output device such as LCD)
 
 ```
 abc@raspberrypi:~/node-red-ai-agents/bin $ ./image_recognition_result.sh 
 {"keyphrases": ["indoor setting", "ceiling", "curtains", "windows", "wall clock", "square opening", "furniture", "lighting", "daytime", "ambient light"]}
 ```
-
-<img src="./docs/iot_test.jpg" width=700>
 
 ### Testing query with RAG
 
