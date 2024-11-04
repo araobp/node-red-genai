@@ -32,7 +32,7 @@ https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/
 
 ## Original Node-RED package "cx"
 
-This project develops original Node-RED nodes to interwork with the Compact RAG for AI Agents.
+This project develops original Node-RED nodes as "cx package" to interwork with the Compact RAG for AI Agents.
 
 => [cx package](./cx)
 
