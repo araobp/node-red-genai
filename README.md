@@ -1,8 +1,9 @@
 # Node-RED as an AI agent framwork
 
 Note: 
-- this is my hobby project.
+- This is my hobby project.
 - AI agent node not supported yet, to be developed soon.
+
 
 <img src="./docs/camera_test.jpg" width=600>
 
