@@ -15,6 +15,11 @@ module.exports = function(RED) {
             const b64image = await capture();
             this.status({});
             msg.payload = b64image;
+            if ('chat_params' in msg) {
+                msg.chat_params.b64image = b64image;
+            } else {
+                msg.chat_params = {b64image: b64image};
+            }
             node.send(msg);
         });
     }
