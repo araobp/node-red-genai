@@ -1,9 +1,6 @@
 # Node-RED for Generative AI
 
-Note: 
-- This is my hobby project.
-- AI agent node not supported yet, to be developed soon.
-
+Note: this is my hobby project.
 
 <img src="./docs/camera_test.jpg" width=600>
 
