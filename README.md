@@ -55,14 +55,6 @@ Sample Node-RED flows => [flows](./flows)
 
 <img src="./docs/template_dialog.jpg" width=700>
 
-<img src="./docs/dashboard_test.jpg" width=700>
-
-### Testing the camera
-
-<img src="./docs/chat_dialog.jpg" width=700>
-
-<img src="./docs/template_camera.jpg" width=700>
-
 ```
 <template>
     <div class="frame">
@@ -131,6 +123,14 @@ Sample Node-RED flows => [flows](./flows)
     }
 </style>
 ```
+
+<img src="./docs/dashboard_test.jpg" width=700>
+
+### Testing the camera
+
+<img src="./docs/chat_dialog.jpg" width=700>
+
+<img src="./docs/template_camera.jpg" width=700>
 
 <img src="./docs/camera_test.jpg" width=700>
 
