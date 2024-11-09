@@ -1,4 +1,4 @@
-# Node-RED as an AI agent framwork
+# Node-RED for Generative AI
 
 Note: 
 - This is my hobby project.
