@@ -1,8 +1,10 @@
 const BASE_URL = "http://127.0.0.1:5050";
 
-const chat = async (context, query, k=3, json_output=false, b64image=null) => {
+const chat = async (context=null, query="", k=3, json_output=false, b64image=null) => {
     const userMessage = encodeURIComponent(query);
-    const url = `${BASE_URL}/chat?context=${context}&user_message=${userMessage}&k=${k}&json_output=${json_output}`;
+    
+    var url = `${BASE_URL}/chat?user_message=${userMessage}&k=${k}&json_output=${json_output}`;
+    url = (context === null) ? url: url + `&context=${context}`;
     var response;
     if (b64image === null) {
         response = await fetch(url);
@@ -24,11 +26,11 @@ module.exports = function(RED) {
         RED.nodes.createNode(this,config);
         var node = this;
         node.on('input', async msg => {
-            const context = msg.payload.context;
-            const query = msg.payload.query;
-            const k = msg.payload.k;
-            const json_output = msg.payload.json_output ?? false;
-            const b64image = msg.payload.b64image ?? null;
+            const context = (msg.topic === "" || msg.topic === undefined) ? null: msg.topic
+            const query = msg.payload;
+            const k = msg.chat_params?.k ?? config.k;
+            const json_output = config.json_output;
+            const b64image = msg.chat_params?.b64image ?? null;
             this.status({fill: "green", shape: "dot", text: "in progress..."});
             const answer = await chat(context, query, k, json_output, b64image);
             this.status({});
