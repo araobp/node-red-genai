@@ -2,7 +2,7 @@
 
 Note: this is my hobby project.
 
-<img src="./docs/iot_test.jpg" width=600>
+<img src="./docs/camera_test.jpg" width=600>
 
 ## Background and Motivation
 
