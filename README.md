@@ -47,9 +47,15 @@ alias rl='cd ~/.node-red;npm install ~/node-red-ai-agents/cx;node-red-stop;node-
 
 Sample Node-RED flows => [flows](./flows)
 
-### Testing IoT flows
+### Testing query with RAG
 
-<img src="./docs/iot_test.jpg" width=700>
+<img src="./docs/rag_test.jpg" width=700>
+
+### Testing the camera
+
+<img src="./docs/camera_test.jpg" width=700>
+
+### Testing IoT flows
 
 MQTT publisher (This script simulates a proximity sensor emitting an proximity event to the MQTT broker)
 
@@ -63,10 +69,6 @@ MQTT subscriber (This script simulates a output device such as LCD)
 abc@raspberrypi:~/node-red-ai-agents/bin $ ./image_recognition_result.sh 
 {"keyphrases": ["indoor setting", "ceiling", "curtains", "windows", "wall clock", "square opening", "furniture", "lighting", "daytime", "ambient light"]}
 ```
-
-### Testing query with RAG
-
-<img src="./docs/rag_test.jpg" width=700>
 
 ## References
 
