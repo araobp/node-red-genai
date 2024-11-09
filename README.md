@@ -49,11 +49,15 @@ Sample Node-RED flows => [flows](./flows)
 
 ### Testing query with RAG
 
+<img src="./docs/template_rag.jpg" width=700>
+
 <img src="./docs/rag_test.jpg" width=700>
 
 <img src="./docs/dashboard_test.jpg" width=700>
 
 ### Testing the camera
+
+<img src="./docs/template_camera.jpg" width=700>
 
 <img src="./docs/camera_test.jpg" width=700>
 
