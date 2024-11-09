@@ -51,6 +51,8 @@ Sample Node-RED flows => [flows](./flows)
 
 <img src="./docs/template_rag.jpg" width=700>
 
+<img src="./docs/chat_dialog.jpg" width=700>
+
 <img src="./docs/rag_test.jpg" width=700>
 
 <img src="./docs/dashboard_test.jpg" width=700>
