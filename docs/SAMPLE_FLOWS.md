@@ -86,18 +86,3 @@
 <img src="./template_camera.jpg" width=700>
 
 <img src="./camera_test.jpg" width=700>
-
-### Testing IoT flows
-
-MQTT publisher (This script simulates a proximity sensor emitting an proximity event to the MQTT broker)
-
-```
-abc@raspberrypi:~/node-red-ai-agents/bin $ ./image_recognition_start.sh
-```
-
-MQTT subscriber (This script simulates a output device such as LCD)
-
-```
-abc@raspberrypi:~/node-red-ai-agents/bin $ ./image_recognition_result.sh 
-{"keyphrases": ["indoor setting", "ceiling", "curtains", "windows", "wall clock", "square opening", "furniture", "lighting", "daytime", "ambient light"]}
-```
