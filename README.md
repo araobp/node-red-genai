@@ -48,6 +48,7 @@ alias rl='cd ~/.node-red;npm install ~/node-red-ai-agents/cx;node-red-stop;node-
 Sample Node-RED flows => [flows](./flows)
 
 - [SAMPLE_FLOWS.md](./docs/SAMPLE_FLOWS.md)
+- [ROCK_PAPER_SCISSORS.md](./docs/ROCK_PAPER_SCISSORS.md)
 
 ## References
 
