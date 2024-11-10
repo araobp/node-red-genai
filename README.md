@@ -54,6 +54,10 @@ Node-RED flows => [flows](./flows)
 - [SAMPLE_FLOWS.md](./docs/SAMPLE_FLOWS.md)
 - [ROCK_PAPER_SCISSORS.md](./docs/ROCK_PAPER_SCISSORS.md)
 
+## MQTT client app for Android
+
+I find [MyMQTT](https://play.google.com/store/apps/details?id=at.tripwire.mqtt.client&hl=en) very useful for this project.
+
 ## References
 
 - https://nodered.org/docs/creating-nodes/
