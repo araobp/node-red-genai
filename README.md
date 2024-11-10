@@ -43,7 +43,7 @@ It is useful to define a bash alias for installing the package in Node-RED, like
 alias rl='cd ~/.node-red;npm install ~/node-red-ai-agents/cx;node-red-stop;node-red-start'
 ```
 
-## Samples
+## Sample Flows
 
 Sample Node-RED flows => [flows](./flows)
 
