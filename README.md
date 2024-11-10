@@ -54,7 +54,7 @@ Node-RED flows => [flows](./flows)
 - [SAMPLE_FLOWS.md](./docs/SAMPLE_FLOWS.md)
 - [ROCK_PAPER_SCISSORS.md](./docs/ROCK_PAPER_SCISSORS.md)
 
-## MQTT client app for smart phones and iOS
+## MQTT client app for smart phones
 
 I find MyMQTT very useful for this project:
 - https://play.google.com/store/apps/details?id=at.tripwire.mqtt.client&hl=en
