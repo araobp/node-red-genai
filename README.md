@@ -22,7 +22,9 @@ Everything in this project runs on Raspberry Pi:
 
 This project uses my original API server: https://github.com/araobp/compact-rag
 
-The reason why this project uses the API server made with Python: I want to use opencv, pandas and networks.
+The reason why this project uses the API server made with Python:
+- I want to use opencv, pandas and networks.
+- Usually, we need not only Node-RED (event-driven) but also web UI (client-server) and other kinds of UIs (e.g, 3D game engine such as Unity).
 
 ### Running Node-RED on Raspberry Pi
 
