@@ -6,7 +6,7 @@ Note: this is my hobby project.
 
 ## Background and Motivation
 
-I am an engineer for my company's showroom. I need an AI agent framework that also supports IoT.
+I need a LLM-chain framework for marketing data analysis. Node-RED is perfect for realizing the framework.
 
 ## Requirements
 
@@ -16,9 +16,13 @@ Everything in this project runs on Raspberry Pi:
 - [Compact RAG (API Server)](https://github.com/araobp/compact-rag) and OpenAI API Key
 - Mosquitto Broker (MQTT Broker)
 
+2024/11/16 Note: I am going to remove the dependency on Compact RAG.
+
 ## Set up
 
 ### Compact RAG (API Server)
+
+2024/11/16 Note: I am going to remove the dependency on Compact RAG.
 
 This project uses my original API server: https://github.com/araobp/compact-rag
 
