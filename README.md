@@ -16,13 +16,9 @@ Everything in this project runs on Raspberry Pi:
 - [Compact RAG (API Server)](https://github.com/araobp/compact-rag) and OpenAI API Key
 - Mosquitto Broker (MQTT Broker)
 
-2024/11/16 Note: I am going to remove the dependency on Compact RAG.
-
 ## Set up
 
 ### Compact RAG (API Server)
-
-2024/11/16 Note: I am going to remove the dependency on Compact RAG.
 
 This project uses my original API server: https://github.com/araobp/compact-rag
 
