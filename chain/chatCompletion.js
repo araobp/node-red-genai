@@ -1,36 +1,47 @@
-const openai = require('openai');
-
 const MODEL = "gpt-4o-mini";
+const API_KEY = process.env['OPENAI_API_KEY'];
 
-const client = new openai.OpenAI({
-    apiKey: process.env['OPENAI_API_KEY'],
-});
+const HEADERS = {
+    "Content-Type": "application/json",
+    "Authorization": `Bearer ${API_KEY}`,
+}
+
+const URL = "https://api.openai.com/v1/chat/completions";
 
 const chat = async (query="", json_output=false, b64image=null) => {
     
-    const content = b64image === null ? query : [
+    const content = (b64image === null) ? query : [
         {
             type: 'text',
             text: query
         },
         {
             type: 'image_url',
-            url: b64image 
+            image_url: {
+                url: b64image
+            }
         },
     ]
     
-    const argv = {
+    const body = {
         messages: [{ role: 'user', content: content }],
         model: MODEL
     }
-    console.log(json_output);
-    if (json_output) {
-        argv['response_format'] = { type: 'json_object' }
+
+    const request = {
+        headers: HEADERS,
+        body: JSON.stringify(body),
+        method: 'POST',        
     }
-    console.log(argv)
     
-    const response = await client.chat.completions.create(argv);
-    return response.choices[0]?.message?.content;
+    if (json_output) {
+        request['response_format'] = {type: 'json_object'};
+    }
+        
+    const response = await fetch(URL, request);
+    const r = await response.json();
+
+    return r.choices[0]?.message?.content;
 }
 
 module.exports = function(RED) {
@@ -52,8 +63,13 @@ module.exports = function(RED) {
 }
 
 if (require.main === module) {
-    const answer = chat('Am I smart?', false, null);
-    answer.then( value => {
-        console.log(value);
+    const fs = require('node:fs');
+    fs.readFile('/tmp/testimg.png', 'ascii', (err, b64image) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    const answer = chat('Describe', false, `data:image/png;base64,${b64image}`);
+        answer.then( v => { console.log(v);});
     });
 }
