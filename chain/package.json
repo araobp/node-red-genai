@@ -8,6 +8,7 @@
   },
   "author": "",
   "license": "ISC",
+  "type": "module",
   "node-red" : {
     "nodes": {
       "chatCompletion": "chatCompletion.js"
