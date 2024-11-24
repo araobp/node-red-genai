@@ -34,6 +34,9 @@ It is useful to define a bash alias for installing the package in Node-RED, like
 ```
 alias rlc='cd ~/.node-red;npm install ~/node-red-genai/chain;node-red-stop;node-red-start'
 ```
+### RAG indexing
+
+=> [indexing](./ref)
 
 ## Flows
 
