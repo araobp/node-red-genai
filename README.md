@@ -11,7 +11,7 @@ I need a node-based low-code development platform supporting LLM-chains with vis
 ## Requirements
 
 - Raspberry Pi
-- sqlite-vec
+- [sqlite-vec](https://github.com/asg017/sqlite-vec)
 - MQTT Broker (optional)
 
 ## Set up
