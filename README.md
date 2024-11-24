@@ -6,7 +6,7 @@ Note: this is my hobby project.
 
 ## Background and Motivation
 
-I need a LLM-chain framework for marketing data analysis. Node-RED is perfect for realizing the framework.
+I need a node-based low-code development platform supporting LLM-chains with visual programming.
 
 ## Requirements
 
