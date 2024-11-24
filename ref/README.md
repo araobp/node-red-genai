@@ -1,9 +1,9 @@
 # RAG indexing
 
-## Chunks
+## Generating Chunks
 
 => [Chunks.ipynb](./Chunks.ipynb)
 
-## Indexing
+## Calculating embeddings
 
 => [calc_embeddings.py](./calc_embeddings.py)
