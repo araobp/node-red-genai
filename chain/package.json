@@ -8,10 +8,10 @@
   },
   "author": "",
   "license": "ISC",
-  "type": "module",
   "node-red" : {
     "nodes": {
-      "chatCompletion": "chatCompletion.js"
+      "chat": "chat.js",
+      "search": "search.js"
     }
   }
 }

@@ -1,0 +1,71 @@
+<script type="text/javascript">
+    RED.nodes.registerType('search',{
+        category: 'chain',
+        color: '#aed6f1',
+        defaults: {
+            name: {value: ""},
+            collection: {value: ""},
+            k: {value: 3},
+            embeddings_db_path: {value: ""},
+            chunks_db_path: {value: ""},
+            embeddings_model: {value: "text-embedding-3-small"},
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "font-awesome/fa-paper-plane",
+        label: function() {
+            return this.name||"search";
+        },
+        oneditprepare: function() {
+            $("#node-input-embeddings_model").typedInput({
+                types: [
+                    {
+                        value: "model",
+                        options: [
+                        { value: "text-embedding-3-small", label: "text-embedding-3-small"},
+                        { value: "text-embedding-3-large", label: "text-embedding-3-large"},
+                        ]
+                    }
+                ]
+            })
+            
+            $("#node-input-k").typedInput({
+                type: "num",
+                types: ["num"],
+                typeFiled: "#node-input-k-type"
+            })
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="search">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-collection"><i class="fa fa-tag"></i> Collection</label>
+        <input type="text" id="node-input-collection">
+    </div>
+    <div class="form-row">
+        <label for="node-input-k"><i class="fa fa-tag"></i> k</label>
+        <input type="text" id="node-input-k">
+        <input type="hidden" id="node-input-k-type">
+    </div>
+    <div class="form-row">
+        <label for="node-input-embeddings_db_path"><i class="fa fa-tag"></i> Embeddings</label>
+        <input type="text" id="node-input-embeddings_db_path">
+    </div>
+    <div class="form-row">
+        <label for="node-input-chunks_db_path"><i class="fa fa-tag"></i>  Chunks</label>
+        <input type="text" id="node-input-chunks_db_path">
+    </div>
+    <div class="form-row">
+        <label for="node-input-embeddings_model"><i class="fa fa-tag"></i> Model</label>
+        <input type="text" id="node-input-embeddings_model">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="search">
+    <p>Search</p>
+</script>

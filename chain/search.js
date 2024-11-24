@@ -1,14 +1,49 @@
-import * as sqliteVec from "sqlite-vec";
-import Database from "better-sqlite3";
-import embeddings from "./embeddings.js";
+const sqliteVec = require('sqlite-vec');
+const Database = require('better-sqlite3');
 
-class VectorDB {
+const EMBEDDINGS_MODEL = "text-embedding-3-small";
+const API_KEY = process.env['OPENAI_API_KEY'];
+
+const HEADERS = {
+    "Content-Type": "application/json",
+    "Authorization": `Bearer ${API_KEY}`,
+}
+
+const EMBEDDINGS_URL = "https://api.openai.com/v1/embeddings";
+
+const embeddings = async (text="", model=EMBEDDINGS_MODEL) => {
     
-    constructor(embeddings_db_path, chunks_db_path) {
+    const body = {
+        input: text,
+        model: model 
+    }
+
+    const request = {
+        headers: HEADERS,
+        body: JSON.stringify(body),
+        method: 'POST',        
+    }
+    
+    const response = await fetch(EMBEDDINGS_URL, request);
+    const r = await response.json();
+
+    return r.data[0]?.embedding;
+}
+
+class Search {
+    
+    constructor(
+        embeddings_db_path,
+        chunks_db_path,
+        embeddings_model=EMBEDDINGS_MODEL
+        ) {
+            
         this.embeddings_db = new Database(embeddings_db_path);
         sqliteVec.load(this.embeddings_db);
         
         this.chunks_db = new Database(chunks_db_path);
+        
+        this.embeddings_model = embeddings_model;
     }
     
     info() {
@@ -22,7 +57,7 @@ class VectorDB {
     }
     
     async get_vector(text) {
-        return await embeddings(text);
+        return await embeddings(text, this.embeddings_model);
     }
 
     async search(collection, text, k, output_as_list=false) {
@@ -43,7 +78,6 @@ class VectorDB {
         )
         .all(new Float32Array(vector));
 
-        // console.log(rows);
         const ids = rows.map(v => v.rowid);
 
         const chunks = this.chunks_db
@@ -54,11 +88,6 @@ class VectorDB {
             AND id in (${ids.map(() => '?').join(',')})
             `
         ).all(ids);
-
-        //console.log(`${ids.map(() => '?').join(',')}`);
-        //console.log(ids);
-
-        // console.log(chunks);
 
         const chunks_ = {};
         chunks.forEach(v => {
@@ -73,17 +102,41 @@ class VectorDB {
 }
 
 
-import { fileURLToPath } from "url";
-const __filename = fileURLToPath(import.meta.url);
+module.exports = function(RED) {
+    function SearchNode(config) {
+        RED.nodes.createNode(this,config);
+        var node = this;
+        this.search = new Search(
+            config.embeddings_db_path,
+            config.chunks_db_path,
+            config.embeddings_model
+        )
+        this.collection = config.collection;
+        this.k = config.k;
+        
+        node.on('input', async msg => {
+            const query = msg.payload;
+            this.status({fill: "orange", shape: "dot", text: "in progress..."});
+            const ref = await this.search.search(this.collection, query, this.k);
+            this.status({});
+            msg.payload = {};
+            msg.payload.query = query;
+            msg.payload.ref = ref;
+            node.send(msg);
+        });
+    }
+    RED.nodes.registerType("search", SearchNode);
+}
 
-if (process.argv[1] === __filename) {
+
+if (require.main === module) {
     
     const EMBEDDINGS_DB_PATH = '../database/embeddings.db';
-    const CHUNKS_DB_PATH = '../database/documents.db';
+    const CHUNKS_DB_PATH = '../database/chunks.db';
     
-    const vectorDB = new VectorDB(EMBEDDINGS_DB_PATH, CHUNKS_DB_PATH);
-    console.log(vectorDB.info());
+    const search = new Search(EMBEDDINGS_DB_PATH, CHUNKS_DB_PATH);
+    console.log(search.info());
     
-    const ref = await vectorDB.search('hansaplatz', 'rich maritime history', 3);
-    console.log(ref);
+    search.search('hansaplatz', 'rich maritime history', 3)
+    .then(ref => console.log(ref));
 }
