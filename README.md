@@ -13,8 +13,10 @@ I need a LLM-chain framework for marketing data analysis. Node-RED is perfect fo
 Everything in this project runs on Raspberry Pi:
 
 - Raspberry Pi
-- [Compact RAG (API Server)](https://github.com/araobp/compact-rag) and OpenAI API Key
+- [Compact RAG (API Server)](https://github.com/araobp/compact-rag) and OpenAI API Key (Note 1)
 - Mosquitto Broker (MQTT Broker)
+
+Note 1: I am switching to a pure Node.js implementation to remove the dependency on the API server.
 
 ## Set up
 
