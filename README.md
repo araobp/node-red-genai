@@ -20,7 +20,7 @@ I need a node-based low-code development platform supporting LLM-chains with vis
 
 https://nodered.org/docs/getting-started/raspberrypi
 
-### sqlite-vec
+### sqlite-vec on Raspberry Pi with Node.js
 
 => [SQLITE_VEC.md](./SQLITE_VEC.md)
 
