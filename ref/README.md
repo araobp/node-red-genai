@@ -1,2 +1,7 @@
 # RAG indexing
 
+## Chunks
+
+=> [
+
+## Indexing
