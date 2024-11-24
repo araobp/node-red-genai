@@ -10,8 +10,7 @@ I need a node-based low-code development platform supporting LLM-chains with vis
 
 ## Requirements
 
-- [sqlite-vec](https://github.com/asg017/sqlite-vec)
-- MQTT Broker (optional)
+I use SQLite with [sqlite-vec](https://github.com/asg017/sqlite-vec) as a vector database.
 
 ## Set up
 
