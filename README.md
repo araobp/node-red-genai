@@ -24,10 +24,6 @@ https://nodered.org/docs/getting-started/raspberrypi
 
 => [SQLITE_VEC.md](./SQLITE_VEC.md)
 
-### MQTT Broker
-
-https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/
-
 ## My Original Node-RED package "chain"
 
 => [chain package](./chain)
@@ -46,4 +42,5 @@ Node-RED flows => [flows](./flows)
 ## References
 
 - https://nodered.org/docs/creating-nodes/
+- https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/
  
