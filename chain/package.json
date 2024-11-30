@@ -11,7 +11,8 @@
   "node-red" : {
     "nodes": {
       "chat": "chat.js",
-      "search": "search.js"
+      "search": "search.js",
+      "gemini": "gemini.js"
     }
   }
 }

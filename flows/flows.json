@@ -8,6 +8,14 @@
         "env": []
     },
     {
+        "id": "e23612403bebd7c6",
+        "type": "tab",
+        "label": "Gemini tests",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "c82caa528d62e010",
         "type": "tab",
         "label": "Rock Paper Scissors",
@@ -49,42 +57,6 @@
             "groupBorderRadius": "4px",
             "widgetGap": "12px"
         }
-    },
-    {
-        "id": "35f68326bbf8882e",
-        "type": "ui-page",
-        "name": "Page 1",
-        "ui": "07b23dfd979a88c0",
-        "path": "/page1",
-        "icon": "home",
-        "layout": "grid",
-        "theme": "01b571d17c098787",
-        "breakpoints": [
-            {
-                "name": "Default",
-                "px": 0,
-                "cols": 3
-            },
-            {
-                "name": "Tablet",
-                "px": 576,
-                "cols": 6
-            },
-            {
-                "name": "Small Desktop",
-                "px": 768,
-                "cols": 9
-            },
-            {
-                "name": "Desktop",
-                "px": 1024,
-                "cols": 12
-            }
-        ],
-        "order": 1,
-        "className": "",
-        "visible": true,
-        "disabled": false
     },
     {
         "id": "6a59a7a2a698b1eb",
@@ -687,6 +659,114 @@
         "info": "",
         "x": 140,
         "y": 620,
+        "wires": []
+    },
+    {
+        "id": "5c50ba8d442499ec",
+        "type": "gemini",
+        "z": "e23612403bebd7c6",
+        "name": "Gemini",
+        "x": 500,
+        "y": 100,
+        "wires": [
+            [
+                "027e8dea3cda18d5"
+            ]
+        ]
+    },
+    {
+        "id": "1410bcfa7aa96aa7",
+        "type": "inject",
+        "z": "e23612403bebd7c6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [
+                "9521792c71fcf423"
+            ]
+        ]
+    },
+    {
+        "id": "027e8dea3cda18d5",
+        "type": "debug",
+        "z": "e23612403bebd7c6",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "9521792c71fcf423",
+        "type": "template",
+        "z": "e23612403bebd7c6",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Am I smart?",
+        "output": "str",
+        "x": 340,
+        "y": 100,
+        "wires": [
+            [
+                "5c50ba8d442499ec",
+                "2d6eb5d7d014cc9f"
+            ]
+        ]
+    },
+    {
+        "id": "2d6eb5d7d014cc9f",
+        "type": "chat",
+        "z": "e23612403bebd7c6",
+        "name": "OpenAI",
+        "json_output": "false",
+        "x": 500,
+        "y": 160,
+        "wires": [
+            [
+                "cd240a465e4dfb0e"
+            ]
+        ]
+    },
+    {
+        "id": "cd240a465e4dfb0e",
+        "type": "debug",
+        "z": "e23612403bebd7c6",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 160,
         "wires": []
     },
     {
