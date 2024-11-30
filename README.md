@@ -10,7 +10,9 @@ I need a node-based low-code development platform supporting LLM-chains with vis
 
 ## Requirements
 
-I use SQLite with [sqlite-vec](https://github.com/asg017/sqlite-vec) as a vector database.
+- OpenAI API Key
+- Gemini API Key
+- [sqlite-vec](https://github.com/asg017/sqlite-vec)
 
 ## Set up
 
