@@ -54,5 +54,4 @@ Node-RED flows => [flows](./flows)
 ## References
 
 - https://nodered.org/docs/creating-nodes/
-- https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/
  
