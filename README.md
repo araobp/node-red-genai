@@ -8,6 +8,12 @@ Note: this is my hobby project.
 
 As a MVP developer, I need a node-based low-code development platform supporting LLM-chains with visual programming for agile GenAI app prototyping.
 
+## What is the LLM chain?
+
+```
+  in --> [Template] --> [LLM model] --> [Parser] ---> out
+```
+
 ## Requirements
 
 - [Node-RED](https://nodered.org/)
