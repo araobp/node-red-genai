@@ -4,7 +4,7 @@
 # https://github.com/asg017/sqlite-vec/blob/main/examples/simple-python/demo.py
 #
 # Author: araobp@github.com
-# Date: 2024/10/08
+# Date: 2024/11/30
 
 import struct
 from typing import List
@@ -25,9 +25,15 @@ class VectorDB:
         self.db.enable_load_extension(True)
         sqlite_vec.load(self.db)
         self.db.enable_load_extension(False)
-        self.db.execute(
-            f"CREATE VIRTUAL TABLE IF NOT EXISTS {collection} USING vec0(embedding float[{dimensions}])"
-        )
+
+        sql = f"""CREATE VIRTUAL TABLE IF NOT EXISTS {collection} USING vec0(
+              id integer primary key,
+              embedding float[{dimensions}],
+              chunk text 
+              )
+            """
+
+        self.db.execute(sql)
         self.collection = collection
 
     def delete_all(self):
@@ -40,13 +46,13 @@ class VectorDB:
     def save(self, items):
         with self.db:
             self.db.executemany(
-                f"INSERT INTO {self.collection}(rowid, embedding) VALUES (?, ?)",
-                [[item[0], serialize_f32(item[1])] for item in items],
+                f"INSERT INTO {self.collection}(id, chunk, embedding) VALUES (?, ?, ?)",
+                [[item[0], item[1], serialize_f32(item[2])] for item in items],
             )
 
     def search(self, query, k=10):
         rows = self.db.execute(
-            f"SELECT rowid, distance FROM {self.collection} WHERE embedding MATCH ? AND k = {k} ORDER BY distance",
+            f"SELECT id, chunk, distance FROM {self.collection} WHERE embedding MATCH ? AND k = {k} ORDER BY distance",
             [serialize_f32(query)],
         ).fetchall()
         return rows

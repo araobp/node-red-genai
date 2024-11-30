@@ -1,5 +1,5 @@
 # Embeddings calcuration for the chunks
-# Date: 2024/10/06, 2024/11/25
+# Date: 2024/10/06, 2024/11/25, 2024/11/30
 # Author: araobp@github.com
 
 import sys
@@ -38,7 +38,7 @@ for collection in data.keys():
         vectors = embeddings.get_embedding(chunks)
         if collection not in vectors:
             records[collection] = []
-        records[collection].extend(zip(ids, vectors))
+        records[collection].extend(zip(ids, chunks, vectors))
 
 # Save the embeddings in a vector database
 print("Saving the data in the database...")

@@ -33,21 +33,17 @@ const embeddings = async (text="", model=EMBEDDINGS_MODEL) => {
 class Search {
     
     constructor(
-        embeddings_db_path,
-        chunks_db_path,
+        vector_db_path,
         embeddings_model=EMBEDDINGS_MODEL
-        ) {
-            
-        this.embeddings_db = new Database(embeddings_db_path);
-        sqliteVec.load(this.embeddings_db);
-        
-        this.chunks_db = new Database(chunks_db_path);
+        ) {            
+        this.vector_db = new Database(vector_db_path);
+        sqliteVec.load(this.vector_db);
         
         this.embeddings_model = embeddings_model;
     }
     
     info() {
-        const { sqlite_version, vec_version } = this.embeddings_db
+        const { sqlite_version, vec_version } = this.vector_db
         .prepare(
             "select sqlite_version() as sqlite_version, vec_version() as vec_version;",
         )
@@ -64,12 +60,11 @@ class Search {
         
         const vector = await this.get_vector(text);
         
-        const rows = this.embeddings_db
+        const records = this.vector_db
         .prepare(
         `
         SELECT
-        rowid,
-        distance
+        chunk
         FROM ${collection}
         WHERE embedding MATCH ?
         ORDER BY distance
@@ -77,25 +72,8 @@ class Search {
         `,
         )
         .all(new Float32Array(vector));
-
-        const ids = rows.map(v => v.rowid);
-
-        const chunks = this.chunks_db
-        .prepare(
-            `
-            SELECT id, chunk FROM chunks 
-            WHERE collection = '${collection}'
-            AND id in (${ids.map(() => '?').join(',')})
-            `
-        ).all(ids);
-
-        const chunks_ = {};
-        chunks.forEach(v => {
-            chunks_[v.id] = v.chunk;
-        });
         
-        const data = ids.map(id => chunks_[id]);
-
+        const data = records.map(v => v.chunk);
         return output_as_list ? data : data.join('\n\n');
     }
 
@@ -107,8 +85,7 @@ module.exports = function(RED) {
         RED.nodes.createNode(this,config);
         var node = this;
         this.search = new Search(
-            config.embeddings_db_path,
-            config.chunks_db_path,
+            config.vector_db_path,
             config.embeddings_model
         )
         this.collection = config.collection;
@@ -131,10 +108,9 @@ module.exports = function(RED) {
 
 if (require.main === module) {
     
-    const EMBEDDINGS_DB_PATH = '../database/embeddings.db';
-    const CHUNKS_DB_PATH = '../database/chunks.db';
+    const VECTOR_DB_PATH = '../database/embeddings.db';
     
-    const search = new Search(EMBEDDINGS_DB_PATH, CHUNKS_DB_PATH);
+    const search = new Search(VECTOR_DB_PATH);
     console.log(search.info());
     
     search.search('hansaplatz', 'rich maritime history', 3)

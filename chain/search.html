@@ -6,8 +6,7 @@
             name: {value: ""},
             collection: {value: ""},
             k: {value: 3},
-            embeddings_db_path: {value: ""},
-            chunks_db_path: {value: ""},
+            vector_db_path: {value: ""},
             embeddings_model: {value: "text-embedding-3-small"},
         },
         inputs: 1,
@@ -43,6 +42,14 @@
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
+        <div class="form-row">
+        <label for="node-input-embeddings_model"><i class="fa fa-tag"></i> Model</label>
+        <input type="text" id="node-input-embeddings_model">
+    </div>
+        <div class="form-row">
+        <label for="node-input-vector_db_path"><i class="fa fa-tag"></i> Vector DB</label>
+        <input type="text" id="node-input-vector_db_path">
+    </div>
     <div class="form-row">
         <label for="node-input-collection"><i class="fa fa-tag"></i> Collection</label>
         <input type="text" id="node-input-collection">
@@ -51,18 +58,6 @@
         <label for="node-input-k"><i class="fa fa-tag"></i> k</label>
         <input type="text" id="node-input-k">
         <input type="hidden" id="node-input-k-type">
-    </div>
-    <div class="form-row">
-        <label for="node-input-embeddings_db_path"><i class="fa fa-tag"></i> Embeddings</label>
-        <input type="text" id="node-input-embeddings_db_path">
-    </div>
-    <div class="form-row">
-        <label for="node-input-chunks_db_path"><i class="fa fa-tag"></i>  Chunks</label>
-        <input type="text" id="node-input-chunks_db_path">
-    </div>
-    <div class="form-row">
-        <label for="node-input-embeddings_model"><i class="fa fa-tag"></i> Model</label>
-        <input type="text" id="node-input-embeddings_model">
     </div>
 </script>
 

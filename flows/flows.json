@@ -87,51 +87,6 @@
         "disabled": false
     },
     {
-        "id": "2b2b8fa60df601aa",
-        "type": "ui-group",
-        "name": "Chat Result",
-        "page": "35f68326bbf8882e",
-        "width": "6",
-        "height": "1",
-        "order": 1,
-        "showTitle": false,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "1f88697f4590333d",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "192.168.0.196",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
         "id": "6a59a7a2a698b1eb",
         "type": "ui-page",
         "name": "ジャンケンポン (Rock Paper Scissors)",
@@ -220,8 +175,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 150,
-        "y": 180,
+        "x": 110,
+        "y": 100,
         "wires": [
             [
                 "978aa7da62c385cb"
@@ -239,8 +194,8 @@
         "syntax": "mustache",
         "template": "Am I smart?",
         "output": "str",
-        "x": 320,
-        "y": 180,
+        "x": 280,
+        "y": 100,
         "wires": [
             [
                 "0a9ff5d0912d7c1d"
@@ -259,8 +214,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
-        "y": 180,
+        "x": 680,
+        "y": 100,
         "wires": []
     },
     {
@@ -274,8 +229,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 150,
-        "y": 260,
+        "x": 110,
+        "y": 220,
         "wires": [
             [
                 "bcc9bd2b8e5a54da"
@@ -293,8 +248,8 @@
         "syntax": "mustache",
         "template": "Pickup key words from the attached document,\nthen count each key words and output the\nresult in JSON format. Output JSON data only.\n\n# document\n\nWebsites for 20-something men often revolve around personal growth, fitness, technology, and entertainment. Platforms like Reddit and Twitter provide diverse content and discussions, while fitness hubs such as Bodybuilding.com offer health insights. Tech enthusiasts frequent sites like TechCrunch for the latest gadgets. For personal finance, apps like Mint or blogs like Financial Samurai are popular. Entertainment websites like IMDb or gaming hubs like IGN keep them engaged. These platforms blend practicality, lifestyle, and leisure seamlessly.",
         "output": "str",
-        "x": 320,
-        "y": 260,
+        "x": 280,
+        "y": 220,
         "wires": [
             [
                 "e23fca183322d85b"
@@ -313,8 +268,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
-        "y": 260,
+        "x": 680,
+        "y": 220,
         "wires": []
     },
     {
@@ -328,8 +283,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 150,
-        "y": 360,
+        "x": 110,
+        "y": 340,
         "wires": [
             [
                 "3601fffab0891281"
@@ -348,8 +303,8 @@
         "active": true,
         "pass": false,
         "outputs": 0,
-        "x": 240,
-        "y": 440,
+        "x": 200,
+        "y": 420,
         "wires": []
     },
     {
@@ -364,8 +319,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 820,
-        "y": 420,
+        "x": 780,
+        "y": 400,
         "wires": []
     },
     {
@@ -384,8 +339,8 @@
         "hue": "50",
         "delay": "0",
         "name": "",
-        "x": 310,
-        "y": 360,
+        "x": 270,
+        "y": 340,
         "wires": [
             [
                 "8a39a97964e40826",
@@ -405,8 +360,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 530,
-        "y": 320,
+        "x": 490,
+        "y": 300,
         "wires": [
             []
         ]
@@ -423,8 +378,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
-        "y": 360,
+        "x": 460,
+        "y": 340,
         "wires": [
             [
                 "35f84dc7c33bc136"
@@ -442,8 +397,8 @@
         "syntax": "mustache",
         "template": "Describe.",
         "output": "str",
-        "x": 480,
-        "y": 420,
+        "x": 440,
+        "y": 400,
         "wires": [
             [
                 "3c3c6d49fd53c7d5"
@@ -462,7 +417,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 110,
-        "y": 580,
+        "y": 560,
         "wires": [
             [
                 "6f279ddef195ed1a"
@@ -481,7 +436,7 @@
         "template": "Please explain the history of Hansaplatz.",
         "output": "str",
         "x": 250,
-        "y": 580,
+        "y": 560,
         "wires": [
             [
                 "8eb12ebca702ab45"
@@ -500,8 +455,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 580,
+        "x": 680,
+        "y": 520,
         "wires": []
     },
     {
@@ -510,8 +465,8 @@
         "z": "9ab1ca1fd55c609b",
         "name": "",
         "json_output": "false",
-        "x": 510,
-        "y": 180,
+        "x": 470,
+        "y": 100,
         "wires": [
             [
                 "8d6903233b35d785"
@@ -524,8 +479,8 @@
         "z": "9ab1ca1fd55c609b",
         "name": "",
         "json_output": "true",
-        "x": 510,
-        "y": 260,
+        "x": 470,
+        "y": 220,
         "wires": [
             [
                 "bc4f192752649590"
@@ -538,8 +493,8 @@
         "z": "9ab1ca1fd55c609b",
         "name": "",
         "json_output": false,
-        "x": 650,
-        "y": 420,
+        "x": 610,
+        "y": 400,
         "wires": [
             [
                 "7e39d1b44ca35b77"
@@ -553,11 +508,10 @@
         "name": "",
         "collection": "hansaplatz",
         "k": "8",
-        "embeddings_db_path": "/home/arao/node-red-genai/database/embeddings.db",
-        "chunks_db_path": "/home/arao/node-red-genai/database/chunks.db",
+        "vector_db_path": "/home/arao/node-red-genai/database/embeddings.db",
         "embeddings_model": "text-embedding-3-small",
         "x": 370,
-        "y": 580,
+        "y": 560,
         "wires": [
             [
                 "c2512261c2d2fe3e"
@@ -575,11 +529,12 @@
         "syntax": "mustache",
         "template": "Answer to the following query in 50 words\nreferring to the attached reference.\n\n## Query\n\n{{payload.query}}\n\n## Reference\n\n{{payload.ref}}",
         "output": "str",
-        "x": 520,
-        "y": 580,
+        "x": 500,
+        "y": 560,
         "wires": [
             [
-                "2ab110c488d5dccd"
+                "2ab110c488d5dccd",
+                "3e5753755564b9b7"
             ]
         ]
     },
@@ -590,10 +545,10 @@
         "name": "",
         "json_output": "false",
         "x": 650,
-        "y": 580,
+        "y": 560,
         "wires": [
             [
-                "3e5753755564b9b7"
+                "fa5526fe8a53fa83"
             ]
         ]
     },
@@ -603,8 +558,54 @@
         "z": "9ab1ca1fd55c609b",
         "name": "Sample RAG flow",
         "info": "",
-        "x": 440,
+        "x": 120,
         "y": 520,
+        "wires": []
+    },
+    {
+        "id": "8fddfa4e088c5faa",
+        "type": "comment",
+        "z": "9ab1ca1fd55c609b",
+        "name": "Sample JSON flow",
+        "info": "",
+        "x": 130,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "868a7654c6e29ad5",
+        "type": "comment",
+        "z": "9ab1ca1fd55c609b",
+        "name": "Sample test flow",
+        "info": "",
+        "x": 120,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "bb5638e914538d38",
+        "type": "comment",
+        "z": "9ab1ca1fd55c609b",
+        "name": "Sample image flow",
+        "info": "",
+        "x": 130,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "fa5526fe8a53fa83",
+        "type": "debug",
+        "z": "9ab1ca1fd55c609b",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 560,
         "wires": []
     },
     {
@@ -905,29 +906,6 @@
         ]
     },
     {
-        "id": "4aa6e9694c819071",
-        "type": "mqtt in",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "topic": "genai/rps/in",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "1f88697f4590333d",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 130,
-        "y": 40,
-        "wires": [
-            [
-                "57042e1c6ea4fd6b",
-                "af4ccf6b837a9db0",
-                "ecd2e8cf8d27b70b"
-            ]
-        ]
-    },
-    {
         "id": "498808f7f98e38b1",
         "type": "ui-template",
         "z": "c82caa528d62e010",
@@ -950,22 +928,6 @@
         "wires": [
             [
                 "f5b88c82311176b0"
-            ]
-        ]
-    },
-    {
-        "id": "2d398776ca83cd17",
-        "type": "camera",
-        "z": "c82caa528d62e010",
-        "name": "USB Camera",
-        "skip_frames": "6",
-        "rect_image": "true",
-        "x": 150,
-        "y": 340,
-        "wires": [
-            [
-                "498808f7f98e38b1",
-                "c4ad0a8e54de30bf"
             ]
         ]
     },
@@ -1033,7 +995,7 @@
                 "t": "move",
                 "p": "payload",
                 "pt": "msg",
-                "to": "payload.b64image",
+                "to": "b64image",
                 "tot": "msg"
             },
             {
@@ -1054,20 +1016,6 @@
         "wires": [
             [
                 "19ccd98f958c1a0b"
-            ]
-        ]
-    },
-    {
-        "id": "e9ce6d2b0fb38b20",
-        "type": "chat",
-        "z": "c82caa528d62e010",
-        "name": "Chat Completion w/ image",
-        "json_output": "true",
-        "x": 440,
-        "y": 520,
-        "wires": [
-            [
-                "60ee903516e17539"
             ]
         ]
     },
@@ -1103,7 +1051,8 @@
         "y": 480,
         "wires": [
             [
-                "e9ce6d2b0fb38b20"
+                "2f47bd682e975b87",
+                "56998be15e7bb985"
             ]
         ]
     },
@@ -1295,7 +1244,86 @@
         "y": 300,
         "wires": [
             [
-                "2d398776ca83cd17"
+                "a5c09179e2320241"
+            ]
+        ]
+    },
+    {
+        "id": "2f47bd682e975b87",
+        "type": "chat",
+        "z": "c82caa528d62e010",
+        "name": "",
+        "json_output": "true",
+        "x": 390,
+        "y": 540,
+        "wires": [
+            [
+                "60ee903516e17539"
+            ]
+        ]
+    },
+    {
+        "id": "a5c09179e2320241",
+        "type": "usb-camera",
+        "z": "c82caa528d62e010",
+        "mode": "encode",
+        "format": "png",
+        "filename": "image.jpg",
+        "width": "320",
+        "height": "320",
+        "quality": "100",
+        "brightness": "50",
+        "contrast": "50",
+        "saturation": "50",
+        "hue": "50",
+        "delay": "0",
+        "name": "",
+        "x": 150,
+        "y": 340,
+        "wires": [
+            [
+                "498808f7f98e38b1",
+                "c4ad0a8e54de30bf"
+            ]
+        ]
+    },
+    {
+        "id": "63938525eadc6ec7",
+        "type": "inject",
+        "z": "c82caa528d62e010",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 520,
+        "wires": [
+            [
+                "3408932efdd44ed3"
+            ]
+        ]
+    },
+    {
+        "id": "c0044b2c47c93bd2",
+        "type": "inject",
+        "z": "c82caa528d62e010",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "ecd2e8cf8d27b70b",
+                "af4ccf6b837a9db0",
+                "57042e1c6ea4fd6b"
             ]
         ]
     }
