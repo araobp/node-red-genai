@@ -6,7 +6,7 @@ Note: this is my hobby project.
 
 ## Background and Motivation
 
-I need a node-based low-code development platform supporting LLM-chains with visual programming.
+As a MVP developer, I need a node-based low-code development platform supporting LLM-chains with visual programming for agile prototyping.
 
 ## Requirements
 
