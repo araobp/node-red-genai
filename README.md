@@ -17,8 +17,8 @@ As a MVP developer, I need a node-based low-code development platform supporting
 ## Requirements
 
 - [Node-RED](https://nodered.org/)
-- [OpenAI API Key](https://platform.openai.com/docs)
 - [Gemini API](https://ai.google.dev/gemini-api/docs)
+- [OpenAI API Key](https://platform.openai.com/docs)
 - [sqlite-vec](https://github.com/asg017/sqlite-vec) (>= v0.1.6)
 
 ## Set up
