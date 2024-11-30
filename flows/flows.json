@@ -666,7 +666,7 @@
         "type": "gemini",
         "z": "e23612403bebd7c6",
         "name": "Gemini",
-        "x": 500,
+        "x": 440,
         "y": 100,
         "wires": [
             [
@@ -695,7 +695,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
+        "x": 120,
         "y": 100,
         "wires": [
             [
@@ -715,7 +715,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
+        "x": 600,
         "y": 100,
         "wires": []
     },
@@ -730,7 +730,7 @@
         "syntax": "mustache",
         "template": "Am I smart?",
         "output": "str",
-        "x": 340,
+        "x": 280,
         "y": 100,
         "wires": [
             [
@@ -745,7 +745,7 @@
         "z": "e23612403bebd7c6",
         "name": "OpenAI",
         "json_output": "false",
-        "x": 500,
+        "x": 440,
         "y": 160,
         "wires": [
             [
@@ -765,9 +765,155 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
+        "x": 600,
         "y": 160,
         "wires": []
+    },
+    {
+        "id": "3750abf2295a3ed4",
+        "type": "inject",
+        "z": "e23612403bebd7c6",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 300,
+        "wires": [
+            [
+                "9a47db7818a6ca3f"
+            ]
+        ]
+    },
+    {
+        "id": "9a47db7818a6ca3f",
+        "type": "usb-camera",
+        "z": "e23612403bebd7c6",
+        "mode": "encode",
+        "format": "png",
+        "filename": "image.jpg",
+        "width": "256",
+        "height": "256",
+        "quality": "100",
+        "brightness": "50",
+        "contrast": "50",
+        "saturation": "50",
+        "hue": "50",
+        "delay": "0",
+        "name": "",
+        "x": 270,
+        "y": 300,
+        "wires": [
+            [
+                "fbc9837e0424ec98",
+                "1750fe0b0f1f31b2",
+                "48b1a533dd89c484"
+            ]
+        ]
+    },
+    {
+        "id": "1750fe0b0f1f31b2",
+        "type": "function",
+        "z": "e23612403bebd7c6",
+        "name": "image url",
+        "func": "msg.b64image = `data:image/png;base64,${msg.payload}`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 300,
+        "wires": [
+            [
+                "79682b1294c6d684"
+            ]
+        ]
+    },
+    {
+        "id": "79682b1294c6d684",
+        "type": "template",
+        "z": "e23612403bebd7c6",
+        "name": "prompt",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Describe.",
+        "output": "str",
+        "x": 440,
+        "y": 360,
+        "wires": [
+            [
+                "7ed54fb284b694fb"
+            ]
+        ]
+    },
+    {
+        "id": "fbc9837e0424ec98",
+        "type": "image",
+        "z": "e23612403bebd7c6",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 200,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "48b1a533dd89c484",
+        "type": "file",
+        "z": "e23612403bebd7c6",
+        "name": "",
+        "filename": "/tmp/testimg.png",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 490,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4aaa6bbc9de6661d",
+        "type": "debug",
+        "z": "e23612403bebd7c6",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "7ed54fb284b694fb",
+        "type": "gemini",
+        "z": "e23612403bebd7c6",
+        "name": "",
+        "x": 610,
+        "y": 360,
+        "wires": [
+            [
+                "4aaa6bbc9de6661d"
+            ]
+        ]
     },
     {
         "id": "fc88cfed0c69b3eb",
