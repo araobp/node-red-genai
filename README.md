@@ -10,8 +10,8 @@ I need a node-based low-code development platform supporting LLM-chains with vis
 
 ## Requirements
 
-- OpenAI API Key
-- Gemini API Key
+- [OpenAI API Key](https://platform.openai.com/docs)
+- [Gemini API](https://ai.google.dev/gemini-api/docs)
 - [sqlite-vec](https://github.com/asg017/sqlite-vec) (>= v0.1.6)
 
 ## Set up
