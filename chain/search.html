@@ -6,7 +6,7 @@
             name: {value: ""},
             collection: {value: ""},
             k: {value: 3},
-            vector_db_path: {value: ""},
+            db_path: {value: ""},
             embeddings_model: {value: "text-embedding-3-small"},
         },
         inputs: 1,
@@ -23,6 +23,7 @@
                         options: [
                         { value: "text-embedding-3-small", label: "text-embedding-3-small"},
                         { value: "text-embedding-3-large", label: "text-embedding-3-large"},
+                        { value: "sql-select", label: "SQL select"}
                         ]
                     }
                 ]
@@ -44,15 +45,15 @@
     </div>
         <div class="form-row">
         <label for="node-input-embeddings_model"><i class="fa fa-tag"></i> Model</label>
-        <input type="text" id="node-input-embeddings_model">
+        <input type="text" id="node-input-embeddings_model" placeholder="Model">
     </div>
         <div class="form-row">
-        <label for="node-input-vector_db_path"><i class="fa fa-tag"></i> Vector DB</label>
-        <input type="text" id="node-input-vector_db_path">
+        <label for="node-input-db_path"><i class="fa fa-tag"></i> Database</label>
+        <input type="text" id="node-input-db_path" placeholder="Path">
     </div>
     <div class="form-row">
         <label for="node-input-collection"><i class="fa fa-tag"></i> Collection</label>
-        <input type="text" id="node-input-collection">
+        <input type="text" id="node-input-collection" placeholder="Collection">
     </div>
     <div class="form-row">
         <label for="node-input-k"><i class="fa fa-tag"></i> k</label>

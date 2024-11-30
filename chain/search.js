@@ -33,17 +33,17 @@ const embeddings = async (text="", model=EMBEDDINGS_MODEL) => {
 class Search {
     
     constructor(
-        vector_db_path,
+        db_path,
         embeddings_model=EMBEDDINGS_MODEL
-        ) {            
-        this.vector_db = new Database(vector_db_path);
-        sqliteVec.load(this.vector_db);
+        ) {
+        this.db = new Database(db_path);
+        sqliteVec.load(this.db);
         
         this.embeddings_model = embeddings_model;
     }
     
     info() {
-        const { sqlite_version, vec_version } = this.vector_db
+        const { sqlite_version, vec_version } = this.db
         .prepare(
             "select sqlite_version() as sqlite_version, vec_version() as vec_version;",
         )
@@ -58,21 +58,31 @@ class Search {
 
     async search(collection, text, k, output_as_list=false) {
         
-        const vector = await this.get_vector(text);
+        var records;
         
-        const records = this.vector_db
-        .prepare(
-        `
-        SELECT
-        chunk
-        FROM ${collection}
-        WHERE embedding MATCH ?
-        ORDER BY distance
-        LIMIT ${k}
-        `,
-        )
-        .all(new Float32Array(vector));
-        
+        if (this.embeddings_model !== "sql-select") {
+            const vector = await this.get_vector(text);
+
+            const sql =
+            `
+            SELECT chunk FROM ${collection}
+            WHERE embedding MATCH ?
+            ORDER BY distance
+            LIMIT ${k}
+            `;
+            
+            records = this.db.prepare(sql).all(new Float32Array(vector)); 
+        } else {
+            const sql =
+            `
+            SELECT chunk FROM ${collection}
+            WHERE chunk LIKE '%${text}%'
+            LIMIT ${k}
+            `;
+            
+            records = this.db.prepare(sql).all();
+        }
+                
         const data = records.map(v => v.chunk);
         return output_as_list ? data : data.join('\n\n');
     }
@@ -85,15 +95,22 @@ module.exports = function(RED) {
         RED.nodes.createNode(this,config);
         var node = this;
         this.search = new Search(
-            config.vector_db_path,
+            config.db_path,
             config.embeddings_model
         )
         this.collection = config.collection;
         this.k = config.k;
         
         node.on('input', async msg => {
-            const query = msg.payload;
-            this.status({fill: "orange", shape: "dot", text: "in progress..."});
+            var query;
+            var collection;
+            if (typeof msg.payload === Object) {
+                query = msg.palyload.user_message;
+                collection = msg.payload.collection ?? this.collection;
+            } else {
+                query = msg.payload;
+            }
+            this.status({fill: "blue", shape: "dot", text: "in progress..."});
             const ref = await this.search.search(this.collection, query, this.k);
             this.status({});
             msg.payload = {};
@@ -113,6 +130,6 @@ if (require.main === module) {
     const search = new Search(VECTOR_DB_PATH);
     console.log(search.info());
     
-    search.search('hansaplatz', 'rich maritime history', 3)
+    search.search('hansaplatz', 'rich maritime history', 3, true)
     .then(ref => console.log(ref));
 }

@@ -508,7 +508,7 @@
         "name": "",
         "collection": "hansaplatz",
         "k": "8",
-        "vector_db_path": "/home/arao/node-red-genai/database/embeddings.db",
+        "db_path": "/home/arao/node-red-genai/database/embeddings.db",
         "embeddings_model": "text-embedding-3-small",
         "x": 370,
         "y": 560,
@@ -606,6 +606,87 @@
         "statusType": "auto",
         "x": 780,
         "y": 560,
+        "wires": []
+    },
+    {
+        "id": "58f510531a864acf",
+        "type": "inject",
+        "z": "9ab1ca1fd55c609b",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 660,
+        "wires": [
+            [
+                "66a76424a5251c8b"
+            ]
+        ]
+    },
+    {
+        "id": "66a76424a5251c8b",
+        "type": "template",
+        "z": "9ab1ca1fd55c609b",
+        "name": "query",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "eco-friendly",
+        "output": "str",
+        "x": 250,
+        "y": 660,
+        "wires": [
+            [
+                "4e6048f250e05d21"
+            ]
+        ]
+    },
+    {
+        "id": "4e6048f250e05d21",
+        "type": "search",
+        "z": "9ab1ca1fd55c609b",
+        "name": "",
+        "collection": "hansaplatz",
+        "k": "8",
+        "db_path": "/home/arao/node-red-genai/database/embeddings.db",
+        "embeddings_model": "sql-select",
+        "x": 370,
+        "y": 660,
+        "wires": [
+            [
+                "c3803041d749aba0"
+            ]
+        ]
+    },
+    {
+        "id": "c3803041d749aba0",
+        "type": "debug",
+        "z": "9ab1ca1fd55c609b",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "7d891cb371b40510",
+        "type": "comment",
+        "z": "9ab1ca1fd55c609b",
+        "name": "Sample SQL select flow",
+        "info": "",
+        "x": 140,
+        "y": 620,
         "wires": []
     },
     {
