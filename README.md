@@ -10,11 +10,11 @@ I need a node-based low-code development platform supporting LLM-chains with vis
 
 ## Requirements
 
-- Raspberry Pi
-- [sqlite-vec](https://github.com/asg017/sqlite-vec)
-- MQTT Broker (optional)
+I use SQLite with [sqlite-vec](https://github.com/asg017/sqlite-vec) as a vector database.
 
 ## Set up
+
+I use Raspberry Pi 3 (Linux) for this project, but all the programs in this project should run on other operating systems.
 
 ### Running Node-RED on Raspberry Pi
 
@@ -23,10 +23,6 @@ https://nodered.org/docs/getting-started/raspberrypi
 ### sqlite-vec on Raspberry Pi with Node.js
 
 => [SQLITE_VEC.md](./SQLITE_VEC.md)
-
-### MQTT Broker
-
-https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/
 
 ## My Original Node-RED package "chain"
 
@@ -38,6 +34,9 @@ It is useful to define a bash alias for installing the package in Node-RED, like
 ```
 alias rlc='cd ~/.node-red;npm install ~/node-red-genai/chain;node-red-stop;node-red-start'
 ```
+### RAG indexing
+
+=> [indexing](./ref)
 
 ## Flows
 
@@ -46,4 +45,5 @@ Node-RED flows => [flows](./flows)
 ## References
 
 - https://nodered.org/docs/creating-nodes/
+- https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/
  
