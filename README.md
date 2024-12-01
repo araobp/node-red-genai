@@ -6,7 +6,7 @@ Note: this is my hobby project.
 
 ## Background and Motivation
 
-As a MVP developer for CX innovation, I need a node-based low-code development platform supporting LLM-chains with visual programming for agile GenAI app prototyping.
+As a MVP developer for CX(Customer Experience) innovation, I need a node-based low-code development platform supporting LLM-chains with visual programming for agile GenAI app prototyping, to show how GenAI innovate CX.
 
 ## What is the LLM chain?
 
