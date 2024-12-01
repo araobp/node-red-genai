@@ -1,0 +1,54 @@
+<script type="text/javascript">
+    RED.nodes.registerType('db',{
+        category: 'chain',
+        color: '#aed6f1',
+        defaults: {
+            name: {value: ""},
+            collection: {value: ""},
+            k: {value: 3},
+            db_path: {value: ""},
+            sql_select: {value: false, required: true}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "font-awesome/fa-database",
+        label: function() {
+            return this.name||"db";
+        },
+        oneditprepare: function() {
+            $("#node-input-k").typedInput({
+                type: "num",
+                types: ["num"],
+                typeFiled: "#node-input-k-type"
+            })
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="db">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+        <div class="form-row">
+        <label for="node-input-db_path"><i class="fa fa-tag"></i> Database</label>
+        <input type="text" id="node-input-db_path" placeholder="Path">
+    </div>
+    <div class="form-row">
+        <label for="node-input-collection"><i class="fa fa-tag"></i> Collection</label>
+        <input type="text" id="node-input-collection" placeholder="Collection">
+    </div>
+    <div class="form-row">
+        <label for="node-input-k"><i class="fa fa-tag"></i> k</label>
+        <input type="text" id="node-input-k">
+        <input type="hidden" id="node-input-k-type">
+    </div>
+    <div class="form-row">
+        <label for="node-input-sql_select"><i class="fa fa-tag"></i> SQL select</label>
+        <input type="checkbox" id="node-input-sql_select">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="db">
+    <p>Database search</p>
+</script>

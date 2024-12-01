@@ -125,7 +125,7 @@ module.exports = function(RED) {
 
 if (require.main === module) {
     
-    const VECTOR_DB_PATH = '../database/embeddings.db';
+    const VECTOR_DB_PATH = '../database/embeddings_openai.db';
     
     const search = new Search(VECTOR_DB_PATH);
     console.log(search.info());

@@ -12,7 +12,9 @@
     "nodes": {
       "chat": "chat.js",
       "search": "search.js",
-      "gemini": "gemini.js"
+      "gemini": "gemini.js",
+      "db": "db.js",
+      "object": "object.js"
     }
   }
 }

@@ -6,7 +6,7 @@ import sys
 sys.path.append("./search")
 
 import sqlite3
-import embeddings
+import embeddings_openai
 import vector_db
 
 CHUNKS_DB_PATH = "../database/chunks.db"
@@ -35,7 +35,7 @@ for collection in data.keys():
     items = data[collection]
     for i in range(0, len(items), N):
         ids, chunks = zip(*items[i:i+N])
-        vectors = embeddings.get_embedding(chunks)
+        vectors = embeddings_openai.get_embedding(chunks)
         if collection not in vectors:
             records[collection] = []
         records[collection].extend(zip(ids, chunks, vectors))
@@ -43,6 +43,6 @@ for collection in data.keys():
 # Save the embeddings in a vector database
 print("Saving the data in the database...")
 for collection, items in records.items():
-    col_db = vector_db.VectorDB(EMBEDDINGS_DB_PATH, collection, embeddings.DIMENSION)
+    col_db = vector_db.VectorDB(EMBEDDINGS_DB_PATH, collection, embeddings_openai.DIMENSION)
     col_db.delete_all()
     col_db.save(items)
