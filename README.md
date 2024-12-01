@@ -6,7 +6,7 @@ Note: this is my hobby project.
 
 ## Background and Motivation
 
-As a MVP developer, I need a node-based low-code development platform supporting LLM-chains with visual programming for agile GenAI app prototyping.
+As a MVP developer for CX(Customer Experience) innovation, I need a node-based low-code development platform supporting LLM-chains with visual programming for agile GenAI app prototyping, to show how GenAI innovate CX.
 
 ## What is the LLM chain?
 
@@ -17,9 +17,11 @@ As a MVP developer, I need a node-based low-code development platform supporting
 ## Requirements
 
 - [Node-RED](https://nodered.org/)
-- [OpenAI API Key](https://platform.openai.com/docs)
 - [Gemini API](https://ai.google.dev/gemini-api/docs)
+- [OpenAI API](https://platform.openai.com/docs)
 - [sqlite-vec](https://github.com/asg017/sqlite-vec) (>= v0.1.6)
+
+Note: You can start using Gemini API with the free tier.
 
 ## Set up
 
