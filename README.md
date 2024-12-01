@@ -21,6 +21,8 @@ As a MVP developer for CX(Customer Experience) innovation, I need a node-based l
 - [OpenAI API](https://platform.openai.com/docs)
 - [sqlite-vec](https://github.com/asg017/sqlite-vec) (>= v0.1.6)
 
+Note: You can start using Gemini API with the free tier.
+
 ## Set up
 
 I use Raspberry Pi 3 (Linux) for this project, but all the programs in this project should run on other operating systems.
