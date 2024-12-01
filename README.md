@@ -39,6 +39,10 @@ https://nodered.org/docs/getting-started/raspberrypi
 
 => [chain package](./chain)
 
+- "gemini" and "db" for Gemini-based chat supporting RAG
+- "chat" and "search" for OpenAI-based chat supporting RAG
+- "object" to convert a JSON code block to an object
+
 ### Installing the package
 
 It is useful to define a bash alias for installing the package in Node-RED, like this:
