@@ -16,14 +16,6 @@
         "env": []
     },
     {
-        "id": "c82caa528d62e010",
-        "type": "tab",
-        "label": "Rock Paper Scissors",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "07b23dfd979a88c0",
         "type": "ui-base",
         "name": "My Dashboard",
@@ -89,7 +81,7 @@
                 "cols": "12"
             }
         ],
-        "order": 2,
+        "order": 1,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -480,7 +472,7 @@
         "name": "",
         "collection": "hansaplatz",
         "k": "8",
-        "db_path": "/home/arao/node-red-genai/database/embeddings.db",
+        "db_path": "/home/arao/node-red-genai/database/embeddings_openai.db",
         "embeddings_model": "text-embedding-3-small",
         "x": 370,
         "y": 560,
@@ -625,7 +617,7 @@
         "name": "",
         "collection": "hansaplatz",
         "k": "8",
-        "db_path": "/home/arao/node-red-genai/database/embeddings.db",
+        "db_path": "/home/arao/node-red-genai/database/embeddings_openai.db",
         "embeddings_model": "sql-select",
         "x": 370,
         "y": 660,
@@ -667,7 +659,7 @@
         "z": "e23612403bebd7c6",
         "name": "Gemini",
         "x": 440,
-        "y": 100,
+        "y": 40,
         "wires": [
             [
                 "027e8dea3cda18d5"
@@ -679,24 +671,14 @@
         "type": "inject",
         "z": "e23612403bebd7c6",
         "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
+        "props": [],
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 100,
+        "x": 110,
+        "y": 40,
         "wires": [
             [
                 "9521792c71fcf423"
@@ -716,7 +698,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 600,
-        "y": 100,
+        "y": 40,
         "wires": []
     },
     {
@@ -731,7 +713,7 @@
         "template": "Am I smart?",
         "output": "str",
         "x": 280,
-        "y": 100,
+        "y": 40,
         "wires": [
             [
                 "5c50ba8d442499ec",
@@ -746,7 +728,7 @@
         "name": "OpenAI",
         "json_output": "false",
         "x": 440,
-        "y": 160,
+        "y": 100,
         "wires": [
             [
                 "cd240a465e4dfb0e"
@@ -766,7 +748,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 600,
-        "y": 160,
+        "y": 100,
         "wires": []
     },
     {
@@ -781,7 +763,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 110,
-        "y": 300,
+        "y": 240,
         "wires": [
             [
                 "9a47db7818a6ca3f"
@@ -805,7 +787,7 @@
         "delay": "0",
         "name": "",
         "x": 270,
-        "y": 300,
+        "y": 240,
         "wires": [
             [
                 "fbc9837e0424ec98",
@@ -827,7 +809,7 @@
         "finalize": "",
         "libs": [],
         "x": 460,
-        "y": 300,
+        "y": 240,
         "wires": [
             [
                 "79682b1294c6d684"
@@ -846,7 +828,7 @@
         "template": "Describe.",
         "output": "str",
         "x": 440,
-        "y": 360,
+        "y": 300,
         "wires": [
             [
                 "7ed54fb284b694fb"
@@ -866,7 +848,7 @@
         "pass": false,
         "outputs": 0,
         "x": 200,
-        "y": 380,
+        "y": 320,
         "wires": []
     },
     {
@@ -881,7 +863,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 490,
-        "y": 260,
+        "y": 200,
         "wires": [
             []
         ]
@@ -899,7 +881,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 780,
-        "y": 360,
+        "y": 300,
         "wires": []
     },
     {
@@ -908,7 +890,7 @@
         "z": "e23612403bebd7c6",
         "name": "",
         "x": 610,
-        "y": 360,
+        "y": 300,
         "wires": [
             [
                 "4aaa6bbc9de6661d"
@@ -916,707 +898,22 @@
         ]
     },
     {
-        "id": "fc88cfed0c69b3eb",
-        "type": "file in",
-        "z": "c82caa528d62e010",
-        "name": "Load image",
-        "filename": "payload",
-        "filenameType": "msg",
-        "format": "",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "allProps": false,
-        "x": 510,
-        "y": 340,
-        "wires": [
-            [
-                "8ad06dce2376b0f3",
-                "ea903d8feffe308c"
-            ]
-        ]
-    },
-    {
-        "id": "8ad06dce2376b0f3",
-        "type": "base64",
-        "z": "c82caa528d62e010",
+        "id": "9ce764d8a14cde00",
+        "type": "gemini",
+        "z": "e23612403bebd7c6",
         "name": "",
-        "action": "",
-        "property": "payload",
-        "x": 700,
-        "y": 340,
+        "x": 430,
+        "y": 460,
         "wires": [
             [
-                "55a4752f2d7b5f3a"
+                "67a9b9721559fd67"
             ]
         ]
     },
     {
-        "id": "55a4752f2d7b5f3a",
-        "type": "ui-template",
-        "z": "c82caa528d62e010",
-        "group": "39de490c231a8a81",
-        "page": "",
-        "ui": "",
-        "name": "You",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "head": "",
-        "format": "<template>\n    <div class=\"frame\" style=\"text-align: center;\">\n        <h1>あなた (You: GenAI)</h1>\n        <img :src=\"`data:image/jpeg;base64,${msg.payload}`\">\n    </div>\n</template>\n\n<script>\n    export default {\n        data() {\n            // define variables available component-wide\n            // (in <template> and component functions)\n            return {\n            }\n        },\n        watch: {\n        },\n        computed: {\n            // automatically compute this variable\n            // whenever VueJS deems appropriate\n        },\n        methods: {\n            // expose a method to our <template> and Vue Application\n        },\n        mounted() {\n            // code here when the component is first loaded\n        },\n        unmounted() {\n            // code here when the component is removed from the Dashboard\n            // i.e. when the user navigates away from the page\n        }\n    }\n</script>\n<style>\n    .frame {\n        margin-left: 15px;\n        margin-right: 15px;\n    }\n    h1, h2, h3, h4, h5 {\n        margin-bottom: 0.3rem;\n    }\n    p {\n        margin: 0.2rem;\n    }\n</style>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 850,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "632384f58cf349fd",
-        "type": "function",
-        "z": "c82caa528d62e010",
-        "name": "Select gesture",
-        "func": "const GESTURES = ['rock', 'paper', 'scissors']\nconst idx = Math.floor(Math.random()*3)\nconst gesture = GESTURES[idx]\nmsg.topic = gesture\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 540,
-        "y": 240,
-        "wires": [
-            [
-                "5102c6de75f61b5e",
-                "3408932efdd44ed3"
-            ]
-        ]
-    },
-    {
-        "id": "ea903d8feffe308c",
-        "type": "image",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "width": 160,
-        "data": "payload",
-        "dataType": "msg",
-        "thumbnail": false,
-        "active": true,
-        "pass": false,
-        "outputs": 0,
-        "x": 700,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "2492d745266450f7",
-        "type": "delay",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "1200",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 340,
-        "y": 100,
-        "wires": [
-            [
-                "5eee6e79f1b97560"
-            ]
-        ]
-    },
-    {
-        "id": "564fceba0d320ed5",
-        "type": "delay",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "600",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 350,
-        "y": 140,
-        "wires": [
-            [
-                "2e79978a5a276a0b"
-            ]
-        ]
-    },
-    {
-        "id": "1933b40f516142e3",
-        "type": "delay",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "600",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 350,
-        "y": 180,
-        "wires": [
-            [
-                "6b6991b11a53b44a"
-            ]
-        ]
-    },
-    {
-        "id": "5102c6de75f61b5e",
-        "type": "function",
-        "z": "c82caa528d62e010",
-        "name": "image path",
-        "func": "const PATH = '/home/arao/node-red-genai/etc/hand_gesture'\nconst path = `${PATH}/${msg.topic}.jpg`\nmsg.payload = path\nreturn msg",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 770,
-        "y": 240,
-        "wires": [
-            [
-                "fc88cfed0c69b3eb"
-            ]
-        ]
-    },
-    {
-        "id": "af4ccf6b837a9db0",
-        "type": "template",
-        "z": "c82caa528d62e010",
-        "name": "start",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "start",
-        "output": "str",
-        "x": 610,
-        "y": 40,
-        "wires": [
-            [
-                "5102c6de75f61b5e",
-                "2492d745266450f7"
-            ]
-        ]
-    },
-    {
-        "id": "5eee6e79f1b97560",
-        "type": "template",
-        "z": "c82caa528d62e010",
-        "name": "three",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "three",
-        "output": "str",
-        "x": 510,
-        "y": 100,
-        "wires": [
-            [
-                "5102c6de75f61b5e",
-                "564fceba0d320ed5"
-            ]
-        ]
-    },
-    {
-        "id": "2e79978a5a276a0b",
-        "type": "template",
-        "z": "c82caa528d62e010",
-        "name": "two",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "two",
-        "output": "str",
-        "x": 510,
-        "y": 140,
-        "wires": [
-            [
-                "5102c6de75f61b5e",
-                "1933b40f516142e3"
-            ]
-        ]
-    },
-    {
-        "id": "6b6991b11a53b44a",
-        "type": "template",
-        "z": "c82caa528d62e010",
-        "name": "one",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "one",
-        "output": "str",
-        "x": 510,
-        "y": 180,
-        "wires": [
-            [
-                "5102c6de75f61b5e",
-                "87ca88911967e5e3"
-            ]
-        ]
-    },
-    {
-        "id": "87ca88911967e5e3",
-        "type": "delay",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "600",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 350,
-        "y": 240,
-        "wires": [
-            [
-                "632384f58cf349fd"
-            ]
-        ]
-    },
-    {
-        "id": "498808f7f98e38b1",
-        "type": "ui-template",
-        "z": "c82caa528d62e010",
-        "group": "f3445455e5dd9502",
-        "page": "",
-        "ui": "",
-        "name": "Me",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "head": "",
-        "format": "<template>\n    <div class=\"frame\" style=\"text-align: center;\">\n        <h1>私 (Me)</h1>\n        <img :src=\"`data:image/jpeg;base64,${msg.payload}`\">\n    </div>\n</template>\n\n<script>\n    export default {\n        data() {\n            // define variables available component-wide\n            // (in <template> and component functions)\n            return {\n            }\n        },\n        watch: {\n        },\n        computed: {\n            // automatically compute this variable\n            // whenever VueJS deems appropriate\n        },\n        methods: {\n            // expose a method to our <template> and Vue Application\n        },\n        mounted() {\n            // code here when the component is first loaded\n        },\n        unmounted() {\n            // code here when the component is removed from the Dashboard\n            // i.e. when the user navigates away from the page\n        }\n    }\n</script>\n<style>\n    .frame {\n        margin-left: 15px;\n        margin-right: 15px;\n    }\n    h1, h2, h3, h4, h5 {\n        margin-bottom: 0.3rem;\n    }\n    p {\n        margin: 0.2rem;\n    }\n</style>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 350,
-        "y": 360,
-        "wires": [
-            [
-                "f5b88c82311176b0"
-            ]
-        ]
-    },
-    {
-        "id": "ecd2e8cf8d27b70b",
-        "type": "template",
-        "z": "c82caa528d62e010",
-        "name": "you",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "/home/arao/node-red-genai/etc/hand_gesture/you.jpg",
-        "output": "str",
-        "x": 130,
-        "y": 120,
-        "wires": [
-            [
-                "a568442d79dab90a"
-            ]
-        ]
-    },
-    {
-        "id": "a568442d79dab90a",
-        "type": "file in",
-        "z": "c82caa528d62e010",
-        "name": "Load image",
-        "filename": "payload",
-        "filenameType": "msg",
-        "format": "",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "allProps": false,
-        "x": 130,
-        "y": 160,
-        "wires": [
-            [
-                "5c4d8ccdff12119b"
-            ]
-        ]
-    },
-    {
-        "id": "5c4d8ccdff12119b",
-        "type": "base64",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "action": "",
-        "property": "payload",
-        "x": 140,
-        "y": 200,
-        "wires": [
-            [
-                "3fdf65bee1139987"
-            ]
-        ]
-    },
-    {
-        "id": "300b89d29052797b",
-        "type": "change",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload",
-                "pt": "msg",
-                "to": "b64image",
-                "tot": "msg"
-            },
-            {
-                "t": "move",
-                "p": "topic",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 400,
-        "y": 440,
-        "wires": [
-            [
-                "19ccd98f958c1a0b"
-            ]
-        ]
-    },
-    {
-        "id": "56998be15e7bb985",
-        "type": "debug",
-        "z": "c82caa528d62e010",
-        "name": "debug",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 570,
-        "y": 600,
-        "wires": []
-    },
-    {
-        "id": "19ccd98f958c1a0b",
-        "type": "template",
-        "z": "c82caa528d62e010",
-        "name": "Prompt",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "あなたはAIロボットで、私はあなたと”ジャンケンポン”をします。\n\n”ジャンケンポン”はお互いのハンドジェスチャーで勝敗を決めます。\nハンドジェスチャーは、グー、チョキ、パーで分類されます。\n\nあなたは{{payload}}を出し、私は添付されるイメージのハンドジェスチャーを出します。\n\n以下に示すフォーマットで勝敗を判断しJSONで出力してください。\n\n## フォーマット例１\n\n{\"あなた\": \"パー\", \"私\": \"グー\", \"勝者\": \"あなたの勝ち！(You win!)\"}\n\n## フォーマット例２\n\n{\"あなた\": \"チョキ\", \"私\": \"グー\", \"勝者\": \"私の勝ち！(I win!)\"}\n\n## フォーマット例３\n\n{\"あなた\": \"パー\", \"私\": \"パー\", \"勝者\": \"引き分け！(Draw!)\"}\n",
-        "output": "str",
-        "x": 380,
-        "y": 480,
-        "wires": [
-            [
-                "2f47bd682e975b87",
-                "56998be15e7bb985"
-            ]
-        ]
-    },
-    {
-        "id": "c4ad0a8e54de30bf",
-        "type": "image",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "width": 160,
-        "data": "payload",
-        "dataType": "msg",
-        "thumbnail": false,
-        "active": true,
-        "pass": false,
-        "outputs": 0,
-        "x": 160,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "60ee903516e17539",
-        "type": "json",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "property": "payload",
-        "action": "obj",
-        "pretty": false,
-        "x": 390,
-        "y": 600,
-        "wires": [
-            [
-                "56998be15e7bb985",
-                "cd41d33c96832d60"
-            ]
-        ]
-    },
-    {
-        "id": "2f883e421c6eba68",
-        "type": "ui-text",
-        "z": "c82caa528d62e010",
-        "group": "3ef77a94cafb97c5",
-        "order": 1,
-        "width": "0",
-        "height": "0",
-        "name": "",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "col-center",
-        "style": true,
-        "font": "",
-        "fontSize": "32",
-        "color": "#000000",
-        "className": "",
-        "x": 850,
-        "y": 640,
-        "wires": []
-    },
-    {
-        "id": "cd41d33c96832d60",
-        "type": "template",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{payload.勝者}}",
-        "output": "str",
-        "x": 580,
-        "y": 640,
-        "wires": [
-            [
-                "2f883e421c6eba68"
-            ]
-        ]
-    },
-    {
-        "id": "9381db3477f061d3",
-        "type": "function",
-        "z": "c82caa528d62e010",
-        "name": "Clear text",
-        "func": "msg.payload = {};\nmsg.payload.勝者 = \"...\";\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 400,
-        "y": 640,
-        "wires": [
-            [
-                "cd41d33c96832d60"
-            ]
-        ]
-    },
-    {
-        "id": "0edb41457a815da7",
-        "type": "link in",
-        "z": "c82caa528d62e010",
-        "name": "link in 1",
-        "links": [
-            "57042e1c6ea4fd6b"
-        ],
-        "x": 285,
-        "y": 640,
-        "wires": [
-            [
-                "9381db3477f061d3"
-            ]
-        ]
-    },
-    {
-        "id": "57042e1c6ea4fd6b",
-        "type": "link out",
-        "z": "c82caa528d62e010",
-        "name": "link out 1",
-        "mode": "link",
-        "links": [
-            "0edb41457a815da7"
-        ],
-        "x": 245,
-        "y": 20,
-        "wires": []
-    },
-    {
-        "id": "f5b88c82311176b0",
-        "type": "filter",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "property": "topic",
-        "filter": "chat",
-        "ignorecase": true,
-        "x": 370,
-        "y": 400,
-        "wires": [
-            [
-                "300b89d29052797b"
-            ]
-        ]
-    },
-    {
-        "id": "3fdf65bee1139987",
-        "type": "change",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "clear",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 140,
-        "y": 240,
-        "wires": [
-            [
-                "498808f7f98e38b1"
-            ]
-        ]
-    },
-    {
-        "id": "3408932efdd44ed3",
-        "type": "change",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "chat",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 140,
-        "y": 300,
-        "wires": [
-            [
-                "a5c09179e2320241"
-            ]
-        ]
-    },
-    {
-        "id": "2f47bd682e975b87",
-        "type": "chat",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "json_output": "true",
-        "x": 390,
-        "y": 540,
-        "wires": [
-            [
-                "60ee903516e17539"
-            ]
-        ]
-    },
-    {
-        "id": "a5c09179e2320241",
-        "type": "usb-camera",
-        "z": "c82caa528d62e010",
-        "mode": "encode",
-        "format": "png",
-        "filename": "image.jpg",
-        "width": "320",
-        "height": "320",
-        "quality": "100",
-        "brightness": "50",
-        "contrast": "50",
-        "saturation": "50",
-        "hue": "50",
-        "delay": "0",
-        "name": "",
-        "x": 150,
-        "y": 340,
-        "wires": [
-            [
-                "498808f7f98e38b1",
-                "c4ad0a8e54de30bf"
-            ]
-        ]
-    },
-    {
-        "id": "63938525eadc6ec7",
+        "id": "bcb52187d9f95acd",
         "type": "inject",
-        "z": "c82caa528d62e010",
-        "name": "",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 90,
-        "y": 520,
-        "wires": [
-            [
-                "3408932efdd44ed3"
-            ]
-        ]
-    },
-    {
-        "id": "c0044b2c47c93bd2",
-        "type": "inject",
-        "z": "c82caa528d62e010",
+        "z": "e23612403bebd7c6",
         "name": "",
         "props": [],
         "repeat": "",
@@ -1625,12 +922,290 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 110,
-        "y": 40,
+        "y": 460,
         "wires": [
             [
-                "ecd2e8cf8d27b70b",
-                "af4ccf6b837a9db0",
-                "57042e1c6ea4fd6b"
+                "69b3b935cca10b7a"
+            ]
+        ]
+    },
+    {
+        "id": "cc2ac9faa2367a75",
+        "type": "debug",
+        "z": "e23612403bebd7c6",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "69b3b935cca10b7a",
+        "type": "template",
+        "z": "e23612403bebd7c6",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "List a few popular cookie recipes using this JSON schema:\n\nRecipe = {'recipeName': string}\nReturn: Array<Recipe>",
+        "output": "str",
+        "x": 280,
+        "y": 460,
+        "wires": [
+            [
+                "9ce764d8a14cde00"
+            ]
+        ]
+    },
+    {
+        "id": "67a9b9721559fd67",
+        "type": "object",
+        "z": "e23612403bebd7c6",
+        "name": "",
+        "x": 570,
+        "y": 460,
+        "wires": [
+            [
+                "cc2ac9faa2367a75"
+            ]
+        ]
+    },
+    {
+        "id": "2d34e6a9603df6bf",
+        "type": "comment",
+        "z": "e23612403bebd7c6",
+        "name": "JSON test",
+        "info": "",
+        "x": 100,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "ac0ead5cc5e9b746",
+        "type": "comment",
+        "z": "e23612403bebd7c6",
+        "name": "Base64 image test",
+        "info": "",
+        "x": 130,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "748f54f7bf612907",
+        "type": "inject",
+        "z": "e23612403bebd7c6",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 560,
+        "wires": [
+            [
+                "1aad26231eff77df"
+            ]
+        ]
+    },
+    {
+        "id": "1aad26231eff77df",
+        "type": "template",
+        "z": "e23612403bebd7c6",
+        "name": "query",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Please explain the history of Hansaplatz.",
+        "output": "str",
+        "x": 250,
+        "y": 560,
+        "wires": [
+            [
+                "274af7a15816dabb"
+            ]
+        ]
+    },
+    {
+        "id": "bb7603f3a9cc27dc",
+        "type": "debug",
+        "z": "e23612403bebd7c6",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "3dd6efc25da94265",
+        "type": "template",
+        "z": "e23612403bebd7c6",
+        "name": "prompt",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Answer to the following query in 50 words\nreferring to the attached reference.\n\n## Query\n\n{{payload.query}}\n\n## Reference\n\n{{payload.ref}}",
+        "output": "str",
+        "x": 500,
+        "y": 560,
+        "wires": [
+            [
+                "bb7603f3a9cc27dc",
+                "a4d0c02820aa2276"
+            ]
+        ]
+    },
+    {
+        "id": "d680379ef67671df",
+        "type": "comment",
+        "z": "e23612403bebd7c6",
+        "name": "Sample RAG flow",
+        "info": "",
+        "x": 120,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "5c7ccfca155a69ce",
+        "type": "debug",
+        "z": "e23612403bebd7c6",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "aa6c0af968c4f7b1",
+        "type": "inject",
+        "z": "e23612403bebd7c6",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 660,
+        "wires": [
+            [
+                "df2a19ae07aefeed"
+            ]
+        ]
+    },
+    {
+        "id": "df2a19ae07aefeed",
+        "type": "template",
+        "z": "e23612403bebd7c6",
+        "name": "query",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "eco-friendly",
+        "output": "str",
+        "x": 250,
+        "y": 660,
+        "wires": [
+            [
+                "94eb16dbc7e07126"
+            ]
+        ]
+    },
+    {
+        "id": "8d25a6c7efa38276",
+        "type": "debug",
+        "z": "e23612403bebd7c6",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "f32112e0835747d9",
+        "type": "comment",
+        "z": "e23612403bebd7c6",
+        "name": "Sample SQL select flow",
+        "info": "",
+        "x": 140,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "274af7a15816dabb",
+        "type": "db",
+        "z": "e23612403bebd7c6",
+        "name": "",
+        "collection": "hansaplatz",
+        "k": "8",
+        "db_path": "/home/arao/node-red-genai/database/embeddings_gemini.db",
+        "sql_select": false,
+        "x": 370,
+        "y": 560,
+        "wires": [
+            [
+                "3dd6efc25da94265",
+                "bb7603f3a9cc27dc"
+            ]
+        ]
+    },
+    {
+        "id": "a4d0c02820aa2276",
+        "type": "gemini",
+        "z": "e23612403bebd7c6",
+        "name": "",
+        "x": 650,
+        "y": 560,
+        "wires": [
+            [
+                "5c7ccfca155a69ce"
+            ]
+        ]
+    },
+    {
+        "id": "94eb16dbc7e07126",
+        "type": "db",
+        "z": "e23612403bebd7c6",
+        "name": "",
+        "collection": "hansaplatz",
+        "k": "8",
+        "db_path": "/home/arao/node-red-genai/database/embeddings_gemini.db",
+        "sql_select": true,
+        "x": 390,
+        "y": 660,
+        "wires": [
+            [
+                "8d25a6c7efa38276"
             ]
         ]
     }
