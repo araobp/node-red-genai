@@ -1,7 +1,7 @@
 {
-  "name": "chain",
+  "name": "gemini",
   "version": "0.0.1",
-  "description": "Chain package",
+  "description": "LLM chains with Gemini",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,8 +10,9 @@
   "license": "ISC",
   "node-red" : {
     "nodes": {
-      "chat": "chat.js",
-      "search": "search.js"
+      "gemini": "gemini.js",
+      "db": "db.js",
+      "object": "object.js"
     }
   }
 }
