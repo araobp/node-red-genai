@@ -97,9 +97,17 @@ module.exports = function(RED) {
             } else {
                 query = msg.payload;
             }
-            this.status({fill: "blue", shape: "dot", text: "in progress..."});
-            const ref = await this.search.search(this.collection, query, this.k);
-            this.status({});
+
+            var ref;
+            try {
+                this.status({fill: "blue", shape: "dot", text: "in progress..."});
+                ref = await this.search.search(this.collection, query, this.k);
+            } catch (error) {
+                node.error("Database access error", msg);
+                return void 0;
+            } finally {
+                this.status({});
+            }
             msg.payload = {};
             msg.payload.query = query;
             msg.payload.ref = ref;
