@@ -2,7 +2,7 @@
 
 Note: this is my hobby project.
 
-<img src="./docs/chain_tests.jpg" width=700>
+<img src="./docs/flow.jpg" width=700>
 
 ## Background and Motivation
 
