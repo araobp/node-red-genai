@@ -1,5 +1,5 @@
 {
-  "name": "chain",
+  "name": "openai",
   "version": "0.0.1",
   "description": "Chain package",
   "main": "index.js",
