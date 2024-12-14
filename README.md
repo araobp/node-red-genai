@@ -35,19 +35,16 @@ https://nodered.org/docs/getting-started/raspberrypi
 
 => [SQLITE_VEC.md](./SQLITE_VEC.md)
 
-## My Original Node-RED package "chain"
+## My Original Node-RED packages
 
-=> [chain package](./chain)
-
-- "gemini" and "db" for Gemini-based chat supporting RAG
-- "chat" and "search" for OpenAI-based chat supporting RAG
-- "object" to convert a JSON code block to an object
+- [gemini package](./gemini)
+- [openai package](./openai)
 
 ### Installing the package
 
 It is useful to define a bash alias for installing the package in Node-RED, like this:
 ```
-alias rlc='cd ~/.node-red;npm install ~/node-red-genai/chain;node-red-stop;node-red-start'
+alias rlg='cd ~/.node-red;npm install ~/node-red-genai/gemini;node-red-stop;node-red-start'
 ```
 ### RAG indexing
 
