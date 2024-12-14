@@ -3,13 +3,27 @@
         category: 'gemini',
         color: '#aed6f1',
         defaults: {
-            name: {value: ""}
+            name: {value: ""},
+            model: {value: "gemini-1.5-flash"}
         },
         inputs: 1,
         outputs: 1,
         icon: "font-awesome/fa-paper-plane",
         label: function() {
             return this.name||"gemini";
+        },
+        oneditprepare: function() {
+            $("#node-input-model").typedInput({
+            types: [
+                {
+                value: "model",
+                options: [
+                    { value: "gemini-1.5-flash", label: "gemini-1.5-flash"},
+                    { value: "gemini-2.0-flash-exp", label: "gemini-2.0-flash-exp"}
+                ]
+                }
+            ]
+            });
         }
     });
 </script>
@@ -19,6 +33,10 @@
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
+    <div class="form-row">
+        <label for="node-input-model"><i class="fa fa-tag"></i> Model</label>
+        <input type="text" id="node-input-model">
+    </div> 
 </script>
 
 <script type="text/html" data-help-name="gemini">
