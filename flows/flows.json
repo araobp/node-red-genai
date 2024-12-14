@@ -2,7 +2,7 @@
     {
         "id": "9ab1ca1fd55c609b",
         "type": "tab",
-        "label": "chain package tests",
+        "label": "openai package tests",
         "disabled": false,
         "info": "",
         "env": []
@@ -10,123 +10,10 @@
     {
         "id": "e23612403bebd7c6",
         "type": "tab",
-        "label": "Gemini tests",
+        "label": "gemini package test",
         "disabled": false,
         "info": "",
         "env": []
-    },
-    {
-        "id": "07b23dfd979a88c0",
-        "type": "ui-base",
-        "name": "My Dashboard",
-        "path": "/dashboard",
-        "appIcon": "",
-        "includeClientData": true,
-        "acceptsClientConfig": [
-            "ui-notification",
-            "ui-control"
-        ],
-        "showPathInSidebar": false,
-        "showPageTitle": true,
-        "navigationStyle": "default",
-        "titleBarStyle": "default"
-    },
-    {
-        "id": "01b571d17c098787",
-        "type": "ui-theme",
-        "name": "Default Theme",
-        "colors": {
-            "surface": "#ffffff",
-            "primary": "#0094CE",
-            "bgPage": "#eeeeee",
-            "groupBg": "#ffffff",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "density": "default",
-            "pagePadding": "12px",
-            "groupGap": "12px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "12px"
-        }
-    },
-    {
-        "id": "6a59a7a2a698b1eb",
-        "type": "ui-page",
-        "name": "ジャンケンポン (Rock Paper Scissors)",
-        "ui": "07b23dfd979a88c0",
-        "path": "/page2",
-        "icon": "home",
-        "layout": "grid",
-        "theme": "01b571d17c098787",
-        "breakpoints": [
-            {
-                "name": "Default",
-                "px": "0",
-                "cols": "3"
-            },
-            {
-                "name": "Tablet",
-                "px": "576",
-                "cols": "6"
-            },
-            {
-                "name": "Small Desktop",
-                "px": "768",
-                "cols": "9"
-            },
-            {
-                "name": "Desktop",
-                "px": "1024",
-                "cols": "12"
-            }
-        ],
-        "order": 1,
-        "className": "",
-        "visible": "true",
-        "disabled": "false"
-    },
-    {
-        "id": "39de490c231a8a81",
-        "type": "ui-group",
-        "name": "You",
-        "page": "6a59a7a2a698b1eb",
-        "width": "6",
-        "height": "1",
-        "order": 1,
-        "showTitle": false,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "f3445455e5dd9502",
-        "type": "ui-group",
-        "name": "Me",
-        "page": "6a59a7a2a698b1eb",
-        "width": "6",
-        "height": "1",
-        "order": 2,
-        "showTitle": false,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "3ef77a94cafb97c5",
-        "type": "ui-group",
-        "name": "Result",
-        "page": "6a59a7a2a698b1eb",
-        "width": "12",
-        "height": "1",
-        "order": 3,
-        "showTitle": false,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
     },
     {
         "id": "2386a882de8fb587",
@@ -140,7 +27,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 110,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "978aa7da62c385cb"
@@ -159,7 +46,7 @@
         "template": "Am I smart?",
         "output": "str",
         "x": 280,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "0a9ff5d0912d7c1d"
@@ -179,7 +66,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 680,
-        "y": 100,
+        "y": 80,
         "wires": []
     },
     {
@@ -194,7 +81,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 110,
-        "y": 220,
+        "y": 180,
         "wires": [
             [
                 "bcc9bd2b8e5a54da"
@@ -213,7 +100,7 @@
         "template": "Pickup key words from the attached document,\nthen count each key words and output the\nresult in JSON format. Output JSON data only.\n\n# document\n\nWebsites for 20-something men often revolve around personal growth, fitness, technology, and entertainment. Platforms like Reddit and Twitter provide diverse content and discussions, while fitness hubs such as Bodybuilding.com offer health insights. Tech enthusiasts frequent sites like TechCrunch for the latest gadgets. For personal finance, apps like Mint or blogs like Financial Samurai are popular. Entertainment websites like IMDb or gaming hubs like IGN keep them engaged. These platforms blend practicality, lifestyle, and leisure seamlessly.",
         "output": "str",
         "x": 280,
-        "y": 220,
+        "y": 180,
         "wires": [
             [
                 "e23fca183322d85b"
@@ -233,7 +120,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 680,
-        "y": 220,
+        "y": 180,
         "wires": []
     },
     {
@@ -248,7 +135,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 110,
-        "y": 340,
+        "y": 280,
         "wires": [
             [
                 "3601fffab0891281"
@@ -268,7 +155,7 @@
         "pass": false,
         "outputs": 0,
         "x": 200,
-        "y": 420,
+        "y": 360,
         "wires": []
     },
     {
@@ -284,7 +171,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 780,
-        "y": 400,
+        "y": 340,
         "wires": []
     },
     {
@@ -304,7 +191,7 @@
         "delay": "0",
         "name": "",
         "x": 270,
-        "y": 340,
+        "y": 280,
         "wires": [
             [
                 "8a39a97964e40826",
@@ -325,7 +212,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 490,
-        "y": 300,
+        "y": 240,
         "wires": [
             []
         ]
@@ -343,7 +230,7 @@
         "finalize": "",
         "libs": [],
         "x": 460,
-        "y": 340,
+        "y": 280,
         "wires": [
             [
                 "35f84dc7c33bc136"
@@ -362,7 +249,7 @@
         "template": "Describe.",
         "output": "str",
         "x": 440,
-        "y": 400,
+        "y": 340,
         "wires": [
             [
                 "3c3c6d49fd53c7d5"
@@ -381,7 +268,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 110,
-        "y": 560,
+        "y": 580,
         "wires": [
             [
                 "6f279ddef195ed1a"
@@ -400,7 +287,7 @@
         "template": "Please explain the history of Hansaplatz.",
         "output": "str",
         "x": 250,
-        "y": 560,
+        "y": 580,
         "wires": [
             [
                 "8eb12ebca702ab45"
@@ -420,7 +307,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 680,
-        "y": 520,
+        "y": 540,
         "wires": []
     },
     {
@@ -430,7 +317,7 @@
         "name": "",
         "json_output": "false",
         "x": 470,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "8d6903233b35d785"
@@ -444,7 +331,7 @@
         "name": "",
         "json_output": "true",
         "x": 470,
-        "y": 220,
+        "y": 180,
         "wires": [
             [
                 "bc4f192752649590"
@@ -458,7 +345,7 @@
         "name": "",
         "json_output": false,
         "x": 610,
-        "y": 400,
+        "y": 340,
         "wires": [
             [
                 "7e39d1b44ca35b77"
@@ -475,7 +362,7 @@
         "db_path": "/home/arao/node-red-genai/database/embeddings_openai.db",
         "embeddings_model": "text-embedding-3-small",
         "x": 370,
-        "y": 560,
+        "y": 580,
         "wires": [
             [
                 "c2512261c2d2fe3e"
@@ -494,7 +381,7 @@
         "template": "Answer to the following query in 50 words\nreferring to the attached reference.\n\n## Query\n\n{{payload.query}}\n\n## Reference\n\n{{payload.ref}}",
         "output": "str",
         "x": 500,
-        "y": 560,
+        "y": 580,
         "wires": [
             [
                 "2ab110c488d5dccd",
@@ -509,7 +396,7 @@
         "name": "",
         "json_output": "false",
         "x": 650,
-        "y": 560,
+        "y": 580,
         "wires": [
             [
                 "fa5526fe8a53fa83"
@@ -523,7 +410,7 @@
         "name": "Sample RAG flow",
         "info": "",
         "x": 120,
-        "y": 520,
+        "y": 540,
         "wires": []
     },
     {
@@ -533,7 +420,7 @@
         "name": "Sample JSON flow",
         "info": "",
         "x": 130,
-        "y": 180,
+        "y": 140,
         "wires": []
     },
     {
@@ -543,7 +430,7 @@
         "name": "Sample test flow",
         "info": "",
         "x": 120,
-        "y": 60,
+        "y": 40,
         "wires": []
     },
     {
@@ -553,7 +440,7 @@
         "name": "Sample image flow",
         "info": "",
         "x": 130,
-        "y": 300,
+        "y": 240,
         "wires": []
     },
     {
@@ -569,7 +456,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 780,
-        "y": 560,
+        "y": 580,
         "wires": []
     },
     {
@@ -584,7 +471,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 110,
-        "y": 660,
+        "y": 680,
         "wires": [
             [
                 "66a76424a5251c8b"
@@ -603,7 +490,7 @@
         "template": "eco-friendly",
         "output": "str",
         "x": 250,
-        "y": 660,
+        "y": 680,
         "wires": [
             [
                 "4e6048f250e05d21"
@@ -620,7 +507,7 @@
         "db_path": "/home/arao/node-red-genai/database/embeddings_openai.db",
         "embeddings_model": "sql-select",
         "x": 370,
-        "y": 660,
+        "y": 680,
         "wires": [
             [
                 "c3803041d749aba0"
@@ -640,7 +527,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 680,
-        "y": 660,
+        "y": 680,
         "wires": []
     },
     {
@@ -650,7 +537,7 @@
         "name": "Sample SQL select flow",
         "info": "",
         "x": 140,
-        "y": 620,
+        "y": 640,
         "wires": []
     },
     {
@@ -658,6 +545,7 @@
         "type": "gemini",
         "z": "e23612403bebd7c6",
         "name": "Gemini",
+        "model": "gemini-2.0-flash-exp",
         "x": 440,
         "y": 40,
         "wires": [
@@ -716,40 +604,9 @@
         "y": 40,
         "wires": [
             [
-                "5c50ba8d442499ec",
-                "2d6eb5d7d014cc9f"
+                "5c50ba8d442499ec"
             ]
         ]
-    },
-    {
-        "id": "2d6eb5d7d014cc9f",
-        "type": "chat",
-        "z": "e23612403bebd7c6",
-        "name": "OpenAI",
-        "json_output": "false",
-        "x": 440,
-        "y": 100,
-        "wires": [
-            [
-                "cd240a465e4dfb0e"
-            ]
-        ]
-    },
-    {
-        "id": "cd240a465e4dfb0e",
-        "type": "debug",
-        "z": "e23612403bebd7c6",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 100,
-        "wires": []
     },
     {
         "id": "3750abf2295a3ed4",
@@ -763,7 +620,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 110,
-        "y": 240,
+        "y": 160,
         "wires": [
             [
                 "9a47db7818a6ca3f"
@@ -787,7 +644,7 @@
         "delay": "0",
         "name": "",
         "x": 270,
-        "y": 240,
+        "y": 160,
         "wires": [
             [
                 "fbc9837e0424ec98",
@@ -809,7 +666,7 @@
         "finalize": "",
         "libs": [],
         "x": 460,
-        "y": 240,
+        "y": 160,
         "wires": [
             [
                 "79682b1294c6d684"
@@ -828,7 +685,7 @@
         "template": "Describe.",
         "output": "str",
         "x": 440,
-        "y": 300,
+        "y": 220,
         "wires": [
             [
                 "7ed54fb284b694fb"
@@ -848,7 +705,7 @@
         "pass": false,
         "outputs": 0,
         "x": 200,
-        "y": 320,
+        "y": 240,
         "wires": []
     },
     {
@@ -863,7 +720,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 490,
-        "y": 200,
+        "y": 120,
         "wires": [
             []
         ]
@@ -881,7 +738,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 780,
-        "y": 300,
+        "y": 220,
         "wires": []
     },
     {
@@ -889,8 +746,9 @@
         "type": "gemini",
         "z": "e23612403bebd7c6",
         "name": "",
+        "model": "gemini-1.5-flash",
         "x": 610,
-        "y": 300,
+        "y": 220,
         "wires": [
             [
                 "4aaa6bbc9de6661d"
@@ -902,6 +760,7 @@
         "type": "gemini",
         "z": "e23612403bebd7c6",
         "name": "",
+        "model": "gemini-2.0-flash-exp",
         "x": 430,
         "y": 460,
         "wires": [
@@ -994,7 +853,7 @@
         "name": "Base64 image test",
         "info": "",
         "x": 130,
-        "y": 200,
+        "y": 120,
         "wires": []
     },
     {
@@ -1184,6 +1043,7 @@
         "type": "gemini",
         "z": "e23612403bebd7c6",
         "name": "",
+        "model": "gemini-2.0-flash-exp",
         "x": 650,
         "y": 560,
         "wires": [
@@ -1200,7 +1060,7 @@
         "collection": "hansaplatz",
         "k": "8",
         "db_path": "/home/arao/node-red-genai/database/embeddings_gemini.db",
-        "sql_select": true,
+        "sql_select": false,
         "x": 390,
         "y": 660,
         "wires": [
