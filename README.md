@@ -54,6 +54,10 @@ alias rlg='cd ~/.node-red;npm install ~/node-red-genai/gemini;node-red-stop;node
 
 Node-RED flows => [flows](./flows)
 
+## Homework
+
+=> [Winter Vacation Homework](WINTER_HOMEWORK.md)
+
 ## References
 
 - https://nodered.org/docs/creating-nodes/
