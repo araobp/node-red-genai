@@ -17,9 +17,9 @@
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active mt-3" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
         <div class="list-group">
-          <a href="/app1" target="_blank" class="list-group-item list-group-item-action">App 1</a>
-          <a href="#" class="list-group-item list-group-item-action">App 2</a>
-          <a href="#" class="list-group-item list-group-item-action">App 3</a>
+          <RouterLink to="/app1" target="_blank" class="list-group-item list-group-item-action">App 1</RouterLink>
+          <RouterLink to="/app2" target="_blank" class="list-group-item list-group-item-action">App 2</RouterLink>
+          <RouterLink to="/app3" target="_blank" class="list-group-item list-group-item-action">App 3</RouterLink>
         </div>
       </div>
       <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...

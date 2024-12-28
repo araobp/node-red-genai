@@ -1,7 +1,3 @@
-<script setup>
-import { RouterView } from 'vue-router'
-</script>
-
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid px-4">
@@ -12,8 +8,8 @@ import { RouterView } from 'vue-router'
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="navbar-nav">
-          <a class="nav-link" href="/">Home</a>
-          <a class="nav-link" href="/about">About</a>
+          <RouterLink to="/" class="nav-link">Home</RouterLink>
+          <RouterLink to="/about" class="nav-link">About</RouterLink>
         </div>
       </div>
     </div>
